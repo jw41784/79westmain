@@ -6,7 +6,7 @@
     <title>79 West Main - Coming Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@200;300;400;500&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -64,6 +64,31 @@
             color: #4A4A48;
             letter-spacing: -1px;
             line-height: 1.1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+        .number {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            letter-spacing: -2px;
+        }
+
+        .on {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #B88746;
+            margin: 0 0.2rem;
+            transform: translateY(-0.1em);
+        }
+
+        .main {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            letter-spacing: -1px;
         }
 
         .address {
@@ -167,6 +192,10 @@
             h1 {
                 font-size: 2.4rem;
             }
+
+            .on {
+                font-size: 1.6rem;
+            }
             
             .subtitle {
                 font-size: 1.2rem;
@@ -187,6 +216,17 @@
             h1 {
                 font-size: 2rem;
                 letter-spacing: -0.5px;
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+
+            .on {
+                font-size: 1.4rem;
+                transform: translateY(0);
+            }
+
+            .number, .main {
+                letter-spacing: -1px;
             }
         }
     </style>
@@ -198,7 +238,11 @@
         
         <div class="decorative-element"></div>
         
-        <h1>79 on Main</h1>
+        <h1>
+            <span class="number">79</span>
+            <span class="on">on</span>
+            <span class="main">Main</span>
+        </h1>
         <div class="address">A Modern Barn Retreat</div>
         
         <div class="subtitle">Where Rustic Charm Meets Quiet Luxury</div>
