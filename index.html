@@ -490,6 +490,12 @@
                 font-size: 0.9rem;
                 padding: 0.9rem 2rem;
             }
+
+            .guidebook-link {
+                display: block;
+                margin: 0.8rem auto;
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -511,6 +517,24 @@
             .number, .main {
                 letter-spacing: -1px;
                 align-self: center;
+            }
+
+            .guide-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .guide-separator {
+                display: block !important;
+                margin: 0.3rem 0 !important;
+                font-size: 1.2rem;
+            }
+
+            .guidebook-link {
+                width: auto;
+                padding: 0.6rem 1.5rem;
             }
         }
     </style>
@@ -593,9 +617,9 @@
         
         <div class="coming-soon">Opening Soon</div>
         
-        <div style="margin-top: 2rem; text-align: center;">
+        <div class="guide-links" style="margin-top: 2rem; text-align: center;">
             <a href="guidebook.html" class="guidebook-link">House Guide</a>
-            <span style="color: #9BAE9B; margin: 0 1rem;">•</span>
+            <span class="guide-separator" style="color: #9BAE9B; margin: 0 1rem;">•</span>
             <a href="regional-guide.html" class="guidebook-link">Regional Guide</a>
         </div>
     </div>
