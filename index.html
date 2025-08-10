@@ -63,10 +63,6 @@
             opacity: 0.8;
         }
 
-        .barn-icon:hover {
-            animation: barnRaising 12s ease-in-out forwards;
-        }
-
         /* Barn raising animation - each element starts hidden */
         .barn-foundation {
             stroke: #9BAE8A;
@@ -150,22 +146,6 @@
             transform: scale(0);
         }
 
-        .weathervane {
-            transform-origin: center;
-            opacity: 0;
-            transform: scale(0) rotate(0deg);
-        }
-
-        .weathervane-pole {
-            stroke: #4A4A48;
-            stroke-width: 1;
-            stroke-linecap: round;
-        }
-
-        .weathervane-pointer, .weathervane-tail {
-            fill: #4A4A48;
-            stroke: none;
-        }
 
         /* Barn Raising Animation Sequence */
         @keyframes barnRaising {
@@ -224,48 +204,44 @@
             }
         }
 
-        /* Apply animations on hover */
-        .barn-icon:hover .barn-foundation {
-            animation: drawFoundation 1.5s ease-out 0.5s forwards;
+        /* Auto-start animations */
+        .barn-foundation {
+            animation: drawFoundation 1.5s ease-out 1s forwards;
         }
 
-        .barn-icon:hover .barn-walls {
-            animation: raiseWalls 2s ease-out 2s forwards;
+        .barn-walls {
+            animation: raiseWalls 2s ease-out 2.5s forwards;
         }
 
-        .barn-icon:hover .barn-doors-left,
-        .barn-icon:hover .barn-doors-right {
+        .barn-doors-left,
+        .barn-doors-right {
             animation: installDoors 1.5s ease-out 4.5s forwards;
         }
 
-        .barn-icon:hover .barn-door-brace-left,
-        .barn-icon:hover .barn-door-brace-right {
+        .barn-door-brace-left,
+        .barn-door-brace-right {
             animation: installBraces 1s ease-out 5.5s forwards;
         }
 
-        .barn-icon:hover .barn-window {
+        .barn-window {
             animation: installWindow 1s ease-out 5s forwards;
         }
 
-        .barn-icon:hover .barn-roof-main,
-        .barn-icon:hover .barn-roof-ridge {
+        .barn-roof-main,
+        .barn-roof-ridge {
             animation: lowerRoof 2s ease-in-out 6.5s forwards;
         }
 
-        .barn-icon:hover .weathervane {
-            animation: placeWeathervane 1s ease-out 8.5s forwards;
+        .light-wire {
+            animation: stringLights 1.5s ease-out 8.5s forwards;
         }
 
-        .barn-icon:hover .light-wire {
-            animation: stringLights 1.5s ease-out 9.5s forwards;
+        .light {
+            animation: installBulbs 1s ease-out 9.5s forwards;
         }
 
-        .barn-icon:hover .light {
-            animation: installBulbs 1s ease-out 10.5s forwards;
-        }
-
-        .barn-icon:hover .window-glow {
-            animation: lightFire 1s ease-out 11s forwards, fireGlow 3s ease-in-out 12s infinite alternate;
+        .window-glow {
+            animation: lightFire 1s ease-out 10.5s forwards, fireGlow 3s ease-in-out 11.5s infinite alternate;
         }
 
         /* Individual animation keyframes */
@@ -295,11 +271,6 @@
             100% { opacity: 1; stroke-dashoffset: 0; transform: translateY(0px); }
         }
 
-        @keyframes placeWeathervane {
-            0% { opacity: 0; transform: scale(0) rotate(0deg) translateY(-10px); }
-            70% { opacity: 1; transform: scale(1.2) rotate(180deg) translateY(2px); }
-            100% { opacity: 1; transform: scale(1) rotate(360deg) translateY(0px); }
-        }
 
         @keyframes stringLights {
             to { opacity: 0.3; stroke-dashoffset: 0; }
@@ -573,16 +544,6 @@
                 <!-- Light connecting wire -->
                 <path d="M15 25 Q25 21 35 19 Q45 19 55 21 Q65 25 65 25" class="light-wire"/>
                 
-                <!-- Weathervane on roof peak -->
-                <g class="weathervane" transform="translate(40,16)">
-                    <!-- Pole -->
-                    <line x1="0" y1="0" x2="0" y2="4" class="weathervane-pole"/>
-                    <!-- Arrow -->
-                    <g class="weathervane-arrow">
-                        <path d="M-3 1 L3 0 L-3 -1 L-1 0 Z" class="weathervane-pointer"/>
-                        <path d="M3 -1.5 L5 0 L3 1.5" class="weathervane-tail"/>
-                    </g>
-                </g>
             </svg>
         </div>
         
