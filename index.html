@@ -296,23 +296,36 @@
 
         .flourish {
             position: absolute;
-            width: 120px;
-            height: 120px;
-            opacity: 0.03;
-            background-image: radial-gradient(circle, #B88746 1px, transparent 1px);
-            background-size: 8px 8px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.06;
+            background-image: radial-gradient(circle, #B88746 0.8px, transparent 1px);
+            background-size: 6px 6px;
+            border-radius: 50%;
         }
 
         .flourish-1 {
-            top: -30px;
-            left: -30px;
+            top: -20px;
+            left: -20px;
             transform: rotate(45deg);
+            animation: flourishFloat1 8s ease-in-out infinite;
         }
 
         .flourish-2 {
-            bottom: -30px;
-            right: -30px;
+            bottom: -20px;
+            right: -20px;
             transform: rotate(225deg);
+            animation: flourishFloat2 10s ease-in-out infinite;
+        }
+
+        @keyframes flourishFloat1 {
+            0%, 100% { transform: rotate(45deg) translateX(0px) translateY(0px); opacity: 0.06; }
+            50% { transform: rotate(47deg) translateX(2px) translateY(-1px); opacity: 0.08; }
+        }
+
+        @keyframes flourishFloat2 {
+            0%, 100% { transform: rotate(225deg) translateX(0px) translateY(0px); opacity: 0.06; }
+            50% { transform: rotate(223deg) translateX(-2px) translateY(1px); opacity: 0.08; }
         }
 
         @media (max-width: 768px) {
