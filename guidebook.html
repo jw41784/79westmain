@@ -135,6 +135,39 @@
             font-size: 1.05rem;
         }
 
+        .hero-image-container {
+            margin: 2rem auto;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(155, 174, 155, 0.2);
+            position: relative;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(155, 174, 155, 0.05) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image-container:hover .hero-image {
+            transform: scale(1.02);
+        }
+
         .section {
             background: #E6DCC8;
             border-radius: 20px;
@@ -313,6 +346,9 @@
     <div class="container">
         <section class="welcome-section" id="welcome">
             <h2>Welcome Home</h2>
+            <div class="hero-image-container">
+                <img src="main house.jpg" alt="79th on Main Barn Retreat" class="hero-image">
+            </div>
             <p>Welcome to 79th on Main, where barn charm meets boutique comfort. This lovingly restored 1920s barn has been transformed into your personal countryside retreat, complete with modern amenities and timeless character.</p>
             <p>This guidebook contains everything you need for a comfortable stay. Take a moment to settle in, pour yourself something delicious from the kitchen, and let the tranquility of the countryside wash over you.</p>
             <p>We're delighted to have you as our guest. May your time here be filled with rest, renewal, and beautiful memories.</p>
