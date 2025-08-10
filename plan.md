@@ -80,7 +80,7 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 
 ### Colors
 - **Sage Green** – muted, calming heritage green (#9BAE9B)
-- **Warm Cream** – soft, sophisticated light neutral (#E6DCC8)
+- **Warm Taupe** – soft, sophisticated neutral (#7C766C)
 - **Cream Beige** – warm, inviting light tone (#D8C9B4)  
 - **Rust Brown** – rich, earthy accent (#8E4B35)
 
