@@ -91,9 +91,15 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 - **Secondary serif**: Libre Baskerville – Elegant accents and subtitles
 
 ### Brand Voice
-- **Tone**: Warm, gracious, and sophisticated—but never stiff
-- **Style**: Conversational and sensory-rich with a hint of whimsy
-- **Voice**: Speaks like a charming host who's thought of every detail
+- **Tone**: Warm, romantic, and aspirational—but never pretentious
+- **Style**: Speaks directly to the guest's desire for escape with sensory-rich language
+- **Voice**: Invites guests to trade stress for serenity, to-do lists for tranquility
+
+**Example Phrasing:**
+- "Wake up to the sound of birdsong and the scent of fresh coffee drifting through the kitchen."
+- "Trade your to-do list for a front porch rocking chair and a good book."
+- "A modern take on the timeless countryside getaway."
+- "The perfect blend of barn charm and boutique hotel comfort."
 
 ### Visual Elements
 - ✅ Animated barn sketch with raising sequence (foundation → walls → roof → lights → fire)

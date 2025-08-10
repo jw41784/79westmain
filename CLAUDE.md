@@ -40,4 +40,6 @@ No build process required - static HTML deployment.
 Full digital guidebook with QR code integration for guest amenities and instructions.
 
 ## Brand Voice
-"Whether you're sipping coffee on the porch swing or curled up under hand-knit throws, this is a space to slow down and savor. Designed for daydreamers, stargazers, and those who crave a softer kind of escape."
+**Tone**: Warm, romantic, and aspirational—but never pretentious. Speaks directly to the guest's desire for escape.
+
+**Current Copy**: "Wake up to the sound of birdsong and the scent of fresh coffee drifting through the kitchen. Trade your to-do list for a front porch rocking chair and a good book. The perfect blend of barn charm and boutique hotel comfort."
