@@ -69,20 +69,50 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 
 ### Domain & Hosting
 - Domain: 79westmain.com (purchased and managed via Cloudflare)
-- Hosting: Cloudflare Pages
-- Status: Domain connected to Cloudflare nameservers, no A records yet
-- [ ] Create Cloudflare Pages project
-- [ ] Connect GitHub repository to Cloudflare Pages
-- [ ] Configure build settings for static site
-- [ ] SSL certificate (automatic with Cloudflare Pages)
+- Hosting: Cloudflare Workers (static assets)
+- Status: ✅ Live at https://79westmain.jw41784.workers.dev/
+- ✅ GitHub repository: https://github.com/jw41784/79westmain
+- ✅ Custom domain configured via DNS CNAME
+- ✅ SSL certificate (automatic with Cloudflare)
+- ✅ Coming soon page deployed with barn raising animation
 
 ## Style Guide
-*[Placeholder - Style guide being created separately]*
+
+### Colors
+- **Sage Green** – muted, calming, heritage green (#9BAE8A)
+- **Antique White** – creamy white with warmth (#F5F1E8)  
+- **Warm Oak** – honey-toned wood (#B88746)
+- **Charcoal Gray** – grounding neutral (#4A4A48)
+- **Soft Linen Beige** – upholstery and layered neutrals (#D8CFC4)
+
+### Typography
+- **Primary font**: Charlton (custom OTF) – Main headers with wide letter spacing (0.405em)
+- **Body font**: Raleway – Clean, modern sans-serif for readability
+- **Secondary serif**: Libre Baskerville – Elegant accents and subtitles
+
+### Brand Voice
+- **Tone**: Warm, gracious, and sophisticated—but never stiff
+- **Style**: Conversational and sensory-rich with a hint of whimsy
+- **Voice**: Speaks like a charming host who's thought of every detail
+
+### Visual Elements
+- ✅ Animated barn sketch with raising sequence (foundation → walls → roof → lights → fire)
+- ✅ Elegant "79TH ON MAIN" typography with flowing script accents
+- ✅ Sage green gradient backgrounds
+- ✅ Subtle decorative flourishes
+
+## Current Status
+✅ **Phase 1 Complete**: Coming soon page with brand identity
+- Animated barn construction sequence
+- Proper typography hierarchy
+- Brand colors and voice implemented
+- Mobile responsive design
+- Auto-deploying from GitHub
 
 ## Next Steps
-1. Verify Cloudflare domain connection
-2. Implement style guide once available
-3. Create site structure and navigation
-4. Add content sections with visual instructions
-5. Test QR code functionality and mobile responsiveness
-6. Deploy and test across devices
+1. Create full site structure and navigation
+2. Add content sections with visual instructions  
+3. Implement QR code functionality
+4. Add photography and visual content
+5. Create offline PWA capabilities
+6. Test across devices and optimize performance
