@@ -57,38 +57,135 @@
         }
 
         .barn-icon {
-            width: 60px;
-            height: 45px;
+            width: 80px;
+            height: 60px;
             margin: 0 auto 2rem;
-            opacity: 0.7;
+            opacity: 0.8;
+            animation: barnBreathe 4s ease-in-out infinite;
         }
 
-        .barn-sketch {
+        /* Variable line weights for depth and authenticity */
+        .barn-foundation {
             stroke: #9BAE8A;
-            stroke-width: 1.5;
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            opacity: 0.9;
+        }
+
+        .barn-walls, .barn-roof-main {
+            stroke: #9BAE8A;
+            stroke-width: 2;
             fill: none;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
 
-        .barn-line-1 { animation: drawLine 2s ease-in-out 0s infinite alternate; }
-        .barn-line-2 { animation: drawLine 2s ease-in-out 0.3s infinite alternate; }
-        .barn-line-3 { animation: drawLine 2s ease-in-out 0.6s infinite alternate; }
-        .barn-line-4 { animation: drawLine 2s ease-in-out 0.9s infinite alternate; }
-        .barn-line-5 { animation: drawLine 2s ease-in-out 1.2s infinite alternate; }
+        .barn-roof-ridge {
+            stroke: #9BAE8A;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+        }
 
-        @keyframes drawLine {
-            0% { 
-                stroke-dasharray: 0 100;
-                opacity: 0.4;
-            }
-            50% {
+        .barn-doors-left, .barn-doors-right {
+            stroke: #9BAE8A;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            opacity: 0.8;
+        }
+
+        .barn-door-brace-left, .barn-door-brace-right {
+            stroke: #9BAE8A;
+            stroke-width: 1;
+            fill: none;
+            stroke-linecap: round;
+            opacity: 0.6;
+        }
+
+        .barn-window {
+            stroke: #9BAE8A;
+            stroke-width: 1.2;
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .window-glow {
+            animation: fireGlow 3s ease-in-out infinite alternate;
+        }
+
+        .light-wire {
+            stroke: #4A4A48;
+            stroke-width: 0.5;
+            fill: none;
+            opacity: 0.3;
+        }
+
+        .light {
+            fill: #F5F1E8;
+            stroke: #B88746;
+            stroke-width: 0.5;
+        }
+
+        .light-1 { animation: twinkle 2.5s ease-in-out infinite; }
+        .light-2 { animation: twinkle 3s ease-in-out 0.5s infinite; }
+        .light-3 { animation: twinkle 2s ease-in-out 1s infinite; }
+        .light-4 { animation: twinkle 2.8s ease-in-out 1.5s infinite; }
+        .light-5 { animation: twinkle 3.2s ease-in-out 2s infinite; }
+        .light-6 { animation: twinkle 2.3s ease-in-out 2.5s infinite; }
+
+        .weathervane {
+            transform-origin: center;
+            animation: weathervaneRotate 20s linear infinite;
+        }
+
+        .weathervane-pole {
+            stroke: #4A4A48;
+            stroke-width: 1;
+            stroke-linecap: round;
+        }
+
+        .weathervane-pointer, .weathervane-tail {
+            fill: #4A4A48;
+            stroke: none;
+        }
+
+        /* Magical animations */
+        @keyframes barnBreathe {
+            0%, 100% { 
+                transform: scale(1) translateY(0px);
                 opacity: 0.8;
             }
-            100% { 
-                stroke-dasharray: 100 0;
-                opacity: 0.6;
+            50% { 
+                transform: scale(1.02) translateY(-1px);
+                opacity: 0.9;
             }
+        }
+
+        @keyframes fireGlow {
+            0% { opacity: 0.6; }
+            50% { opacity: 0.9; }
+            100% { opacity: 0.7; }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes weathervaneRotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(-10deg); }
+            75% { transform: rotate(25deg); }
+            100% { transform: rotate(0deg); }
         }
 
         h1 {
@@ -278,17 +375,68 @@
         <div class="decorative-element"></div>
         
         <div class="barn-icon">
-            <svg viewBox="0 0 60 45" xmlns="http://www.w3.org/2000/svg">
-                <!-- Barn roof -->
-                <path d="M5 25 L30 8 L55 25" class="barn-sketch barn-line-1"/>
-                <!-- Main barn structure -->
-                <path d="M8 25 L8 38 L52 38 L52 25" class="barn-sketch barn-line-2"/>
-                <!-- Barn doors -->
-                <path d="M22 28 L22 38 M28 28 L28 38 M32 28 L32 38 M38 28 L38 38" class="barn-sketch barn-line-3"/>
-                <!-- Loft window -->
-                <path d="M26 18 L34 18 L34 22 L26 22 Z" class="barn-sketch barn-line-4"/>
-                <!-- Ground line -->
-                <path d="M2 38 L58 38" class="barn-sketch barn-line-5"/>
+            <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Gradient for warm window glow -->
+                    <radialGradient id="windowGlow" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" style="stop-color:#B88746;stop-opacity:0.8"/>
+                        <stop offset="70%" style="stop-color:#B88746;stop-opacity:0.4"/>
+                        <stop offset="100%" style="stop-color:#B88746;stop-opacity:0"/>
+                    </radialGradient>
+                    <!-- Filter for soft glow -->
+                    <filter id="softGlow">
+                        <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                        <feMerge> 
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/> 
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <!-- Authentic barn structure with proper proportions -->
+                <!-- Foundation/base -->
+                <path d="M10 48 L70 48" class="barn-foundation"/>
+                
+                <!-- Main barn walls (gambrel roof barn style) -->
+                <path d="M12 48 L12 32 L68 32 L68 48" class="barn-walls"/>
+                
+                <!-- Gambrel roof (classic barn style) -->
+                <path d="M8 32 L12 32 L20 22 L40 18 L60 22 L68 32 L72 32" class="barn-roof-main"/>
+                <path d="M20 22 L60 22" class="barn-roof-ridge"/>
+                
+                <!-- Large barn doors (classic vertical board style) -->
+                <path d="M25 35 L25 48 M30 35 L30 48 M35 35 L35 48" class="barn-doors-left"/>
+                <path d="M45 35 L45 48 M50 35 L50 48 M55 35 L55 48" class="barn-doors-right"/>
+                
+                <!-- Cross braces on doors (X pattern) -->
+                <path d="M26 36 L34 46 M34 36 L26 46" class="barn-door-brace-left"/>
+                <path d="M46 36 L54 46 M54 36 L46 46" class="barn-door-brace-right"/>
+                
+                <!-- Loft window with warm glow -->
+                <rect x="36" y="24" width="8" height="6" fill="url(#windowGlow)" class="window-glow"/>
+                <path d="M35 23 L45 23 L45 31 L35 31 Z M40 23 L40 31 M35 27 L45 27" class="barn-window"/>
+                
+                <!-- String lights along roofline -->
+                <circle cx="15" cy="25" r="0.8" class="light light-1"/>
+                <circle cx="25" cy="21" r="0.8" class="light light-2"/>
+                <circle cx="35" cy="19" r="0.8" class="light light-3"/>
+                <circle cx="45" cy="19" r="0.8" class="light light-4"/>
+                <circle cx="55" cy="21" r="0.8" class="light light-5"/>
+                <circle cx="65" cy="25" r="0.8" class="light light-6"/>
+                
+                <!-- Light connecting wire -->
+                <path d="M15 25 Q25 21 35 19 Q45 19 55 21 Q65 25 65 25" class="light-wire"/>
+                
+                <!-- Weathervane on roof peak -->
+                <g class="weathervane" transform="translate(40,16)">
+                    <!-- Pole -->
+                    <line x1="0" y1="0" x2="0" y2="4" class="weathervane-pole"/>
+                    <!-- Arrow -->
+                    <g class="weathervane-arrow">
+                        <path d="M-3 1 L3 0 L-3 -1 L-1 0 Z" class="weathervane-pointer"/>
+                        <path d="M3 -1.5 L5 0 L3 1.5" class="weathervane-tail"/>
+                    </g>
+                </g>
             </svg>
         </div>
         
