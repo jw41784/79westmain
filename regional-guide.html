@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79 West Main - Finger Lakes Regional Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Charlton';
+            src: url('Charlton.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #9BAE9B;
+            color: #7C766C;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #E6DCC8;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid #9BAE9B;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.3rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .number, .header .main {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #4A4A48;
+        }
+
+        .header .on {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #B88746;
+            margin: 0 0.4rem;
+        }
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: #8E4B35;
+            font-size: 1.1rem;
+        }
+
+        .nav-bar {
+            background: rgba(230, 220, 200, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 120px;
+            z-index: 99;
+            border-bottom: 1px solid rgba(155, 174, 155, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            color: #7C766C;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            color: #8E4B35;
+            background: rgba(142, 75, 53, 0.08);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #E6DCC8 0%, #D8C9B4 100%);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-family: 'Charlton', serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #4A4A48;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section .subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #8E4B35;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section p {
+            line-height: 1.8;
+            color: #7C766C;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: #E6DCC8;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-family: 'Charlton', serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #4A4A48;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #9BAE9B;
+        }
+
+        .section h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: #8E4B35;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .quick-hits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .quick-hit-card {
+            background: rgba(155, 174, 155, 0.12);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #8E4B35;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quick-hit-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(142, 75, 53, 0.15);
+        }
+
+        .quick-hit-card h4 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #4A4A48;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-hit-card p {
+            color: #7C766C;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .place-grid {
+            display: grid;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .place-item {
+            padding: 1.2rem;
+            background: rgba(216, 201, 180, 0.25);
+            border-radius: 12px;
+            border-left: 3px solid #9BAE9B;
+            transition: all 0.3s ease;
+        }
+
+        .place-item:hover {
+            background: rgba(216, 201, 180, 0.4);
+            transform: translateX(5px);
+        }
+
+        .place-item strong {
+            color: #4A4A48;
+            font-weight: 500;
+        }
+
+        .place-item a {
+            color: #8E4B35;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .place-item a:hover {
+            color: #9BAE9B;
+            text-decoration: underline;
+        }
+
+        .place-item em {
+            color: #9BAE9B;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .distance-badge {
+            display: inline-block;
+            background: #9BAE9B;
+            color: #E6DCC8;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            font-weight: 500;
+        }
+
+        .itinerary-card {
+            background: linear-gradient(135deg, rgba(155, 174, 155, 0.1) 0%, rgba(142, 75, 53, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(155, 174, 155, 0.2);
+        }
+
+        .itinerary-card h3 {
+            color: #8E4B35;
+            margin-bottom: 1.5rem;
+        }
+
+        .itinerary-card h4 {
+            color: #4A4A48;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            margin: 1.5rem 0 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .itinerary-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .itinerary-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(155, 174, 155, 0.15);
+            color: #7C766C;
+            line-height: 1.6;
+        }
+
+        .itinerary-card li:last-child {
+            border-bottom: none;
+        }
+
+        .itinerary-card li strong {
+            color: #4A4A48;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        .tips-box {
+            background: rgba(142, 75, 53, 0.08);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 4px solid #8E4B35;
+        }
+
+        .tips-box h3 {
+            color: #8E4B35;
+            margin-bottom: 1rem;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-box li {
+            padding: 0.5rem 0;
+            color: #7C766C;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .tips-box li:before {
+            content: "•";
+            color: #9BAE9B;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid #E6DCC8;
+            color: #E6DCC8;
+            text-decoration: none;
+            border-radius: 40px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: all 0.4s ease;
+        }
+
+        .nav-button:hover {
+            background: #E6DCC8;
+            color: #9BAE9B;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 220, 200, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+
+            .nav-bar {
+                top: 160px;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <span class="number">79TH</span>
+            <span class="on">ON</span>
+            <span class="main">MAIN</span>
+        </h1>
+        <div class="tagline">Finger Lakes Regional Guide</div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="#welcome">Welcome</a>
+            <a href="#quick-hits">Quick Hits</a>
+            <a href="#outdoors">Outdoors</a>
+            <a href="#wineries">Wineries</a>
+            <a href="#breweries">Breweries</a>
+            <a href="#markets">Markets</a>
+            <a href="#ithaca">Ithaca</a>
+            <a href="#itineraries">Itineraries</a>
+            <a href="#seasonal">Seasonal</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero-section" id="welcome">
+            <h2>Trumansburg & Finger Lakes</h2>
+            <div class="subtitle">Things To Do</div>
+            <p>Welcome to the quiet side of the Finger Lakes — minutes from towering waterfalls, vineyard views, and the vibrant college town of Ithaca. This guide blends our favorite spots with curated itineraries so you can plan your perfect getaway effortlessly.</p>
+        </section>
+
+        <section class="section" id="quick-hits">
+            <h2>Quick Hits — Host Favorites</h2>
+            <div class="quick-hits">
+                <div class="quick-hit-card">
+                    <h4>Boundary Breaks Vineyard</h4>
+                    <p>Sweeping lake vistas, outdoor seating, and a Riesling/Cab Franc focus. One of the area's great sunset spots on Seneca Lake.</p>
+                </div>
+                <div class="quick-hit-card">
+                    <h4>Gimme! Coffee</h4>
+                    <p>Beloved local roaster on Main Street Trumansburg. Grab a cappuccino before hikes or wine tasting.</p>
+                </div>
+                <div class="quick-hit-card">
+                    <h4>Garrett's Brewing Company</h4>
+                    <p>Small-batch beers, frequent live music, and a laid-back taproom right in the village.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="outdoors">
+            <h2>Outdoors & Waterfalls</h2>
+            <span class="distance-badge">10–25 min</span>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/taughannockfalls/">Taughannock Falls State Park</a></strong> — Easy gorge trail to a 215-ft waterfall (one of the tallest east of the Rockies) or quick drive to the overlook. Beach and picnic areas on Cayuga Lake.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://ithacatrails.org/trails/black-diamond-trail/">Black Diamond Trail</a></strong> — Gentle 8.4-mile rail trail linking Taughannock to Ithaca's Cass Park.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.cayuganaturecenter.org/">Cayuga Nature Center</a></strong> — Woodland trails, a six-story treehouse, animal exhibits, and Black Diamond Trail access.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/buttermilkfalls/">Buttermilk Falls State Park</a></strong> — Gorge and rim hikes with cascades; seasonal swimming area.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/roberthtreman/">Robert H. Treman State Park</a></strong> — Enfield Glen gorge, Lucifer Falls, and a photogenic stone staircase.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/allanhtreman/">Allan H. Treman State Marine Park</a></strong> — Boat launch, marina, and birding at the south end of Cayuga Lake.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://puddledockers.com/">Puddledockers</a></strong> — Kayak and paddleboard rentals on Cayuga Lake and the inlet.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="wineries">
+            <h2>Wineries, Cideries & Wine Trails</h2>
+            <span class="distance-badge">10–35+ min</span>
+            
+            <h3>Cayuga Lake Wine Trail</h3>
+            <p style="margin-bottom: 1.5rem; color: #7C766C;">America's first wine trail — a compact lakeside route for tastings.</p>
+            
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://sheldrakepoint.com/">Sheldrake Point Winery</a></strong> — Estate wines, breezy lakeside lawn.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://hosmerwinery.com/">Hosmer Winery</a></strong> — Dry Rieslings and reds in a relaxed setting.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://lucasvineyards.com/">Lucas Vineyards</a></strong> — Cayuga's first winery; broad variety.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://thirstyowl.com/">Thirsty Owl Wine Company</a></strong> — Deck with lake views and on-site bistro.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://buttonwoodgrove.com/">Buttonwood Grove Winery</a></strong> — Hilltop setting, live music, cabins.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://fingerlakesciderhouse.com/">Finger Lakes Cider House</a></strong> — Modern ciders, farm lunches, and pastoral views.
+                </div>
+            </div>
+
+            <h3>Seneca Lake (East Shore)</h3>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://boundarybreaks.com/">Boundary Breaks Vineyard</a></strong> — Sweeping Seneca Lake views, dog-friendly lawns, and acclaimed Rieslings.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="breweries">
+            <h2>Breweries</h2>
+            <span class="distance-badge">5–35 min</span>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://garrettsbrewing.com/">Garrett's Brewing Company</a></strong> — Neighborhood taproom, rotating styles, and events.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://ithacabeer.com/">Ithaca Beer Co.</a></strong> — Large beer garden, pub menu, year-round favorites plus seasonal releases.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://liquidstatebrewing.com/">Liquid State Brewing Company</a></strong> — Industrial-chic brewery with food trucks and wide tap list.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://twogoatsbrewing.com/">Two Goats Brewing</a></strong> — Legendary lake view, live music, and Beef on Weck.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://luckyharebrewing.com/">Lucky Hare Brewing</a></strong> — Lakeside lawn in Hector plus Ithaca taproom; hop-forward beers.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="markets">
+            <h2>Markets & Local Food</h2>
+            <span class="distance-badge">5–25 min</span>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://www.trumansburgfarmersmarket.com/">Trumansburg Farmers' Market</a></strong> — Wednesdays, 4–7 pm (May–Oct); produce, crafts, prepared foods, live music.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://ithacamarket.com/">Ithaca Farmers Market</a></strong> — 100+ vendors at Steamboat Landing; produce, prepared food, flowers, and crafts.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ithaca">
+            <h2>Ithaca: Arts, Culture & Strolls</h2>
+            <span class="distance-badge">20–30 min</span>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://www.downtownithaca.com/">Downtown Ithaca Commons</a></strong> — Pedestrian mall of shops, cafés, and festivals.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://hangartheatre.org/">Hangar Theatre</a></strong> — Summer theatre, concerts, and seasonal programming.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://museum.cornell.edu/">Herbert F. Johnson Museum of Art</a></strong> — I. M. Pei design, free admission, panoramic views.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://cornellbotanicgardens.org/">Cornell Botanic Gardens</a></strong> — Gardens, arboretum, and natural areas.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.museumoftheearth.org/">Museum of the Earth</a></strong> — Fossils, dinosaurs, Ice Age geology.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.sciencenter.org/">Sciencenter</a></strong> — Hands-on science museum for all ages.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.sciencenter.org/sagan-planet-walk.html">Sagan Planet Walk</a></strong> — 3/4-mile solar system model from the Commons to the Sciencenter.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://ithacachildrensgarden.org/">Ithaca Children's Garden</a></strong> — Playful outdoor space with whimsical features.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="itineraries">
+            <h2>Weekend & Rainy Day Itineraries</h2>
+            
+            <div class="itinerary-card">
+                <h3>Rainy Day: Culture & Coffee in Ithaca</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Start with a cappuccino at Gimme! Coffee in Trumansburg</li>
+                    <li><strong>Late Morning:</strong> Museum of the Earth — Fossils, dinosaurs, geology</li>
+                    <li><strong>Lunch:</strong> Moosewood Restaurant — World-famous vegetarian cuisine</li>
+                    <li><strong>Afternoon:</strong> Herbert F. Johnson Museum of Art — Art and panoramic lake views</li>
+                    <li><strong>Optional:</strong> Cornell Botanic Gardens Nevin Welcome Center — Indoor exhibits</li>
+                </ul>
+            </div>
+
+            <div class="itinerary-card">
+                <h3>Weekend: Finger Lakes Classics</h3>
+                <h4>Day 1 — Taughannock & Wine</h4>
+                <ul>
+                    <li><strong>Morning:</strong> Taughannock Falls State Park Gorge Trail</li>
+                    <li><strong>Afternoon:</strong> Cayuga Lake Wine Trail — Sheldrake Point, Hosmer, Lucas Vineyards</li>
+                    <li><strong>Evening:</strong> Dinner at Hazelnut Kitchen</li>
+                </ul>
+                <h4>Day 2 — Ithaca Highlights</h4>
+                <ul>
+                    <li><strong>Morning:</strong> Brunch at Collegetown Bagels</li>
+                    <li><strong>Midday:</strong> Cornell Botanic Gardens & Herbert F. Johnson Museum of Art</li>
+                    <li><strong>Afternoon:</strong> Ithaca Commons stroll</li>
+                    <li><strong>Evening:</strong> Drinks at Liquid State Brewing or Ithaca Beer Co.</li>
+                </ul>
+            </div>
+
+            <div class="itinerary-card">
+                <h3>Family-Friendly Fun</h3>
+                <h4>Day 1 — Outdoor Adventure</h4>
+                <ul>
+                    <li><strong>Morning:</strong> Cayuga Nature Center with treehouse exploration</li>
+                    <li><strong>Midday:</strong> Picnic at Taughannock Falls overlook</li>
+                    <li><strong>Afternoon:</strong> Paddle from Puddledockers</li>
+                    <li><strong>Evening:</strong> Pizza in Trumansburg</li>
+                </ul>
+                <h4>Day 2 — Indoor Exploration</h4>
+                <ul>
+                    <li><strong>Morning:</strong> Sciencenter hands-on exhibits</li>
+                    <li><strong>Lunch:</strong> Cornell Dairy Bar ice cream</li>
+                    <li><strong>Afternoon:</strong> Sagan Planet Walk</li>
+                    <li><strong>Evening:</strong> Casual dinner in Ithaca Commons</li>
+                </ul>
+            </div>
+
+            <div class="tips-box">
+                <h3>Tips for Using These Itineraries</h3>
+                <ul>
+                    <li>Check weather forecasts — some spots shine even in light rain</li>
+                    <li>Wineries & cideries often require or encourage reservations</li>
+                    <li>Weekday visits mean fewer crowds at popular spots</li>
+                    <li>Always confirm seasonal hours before heading out</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="seasonal">
+            <h2>Seasonal & Festivals</h2>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://www.grassrootsfest.org/">Finger Lakes GrassRoots Festival</a></strong> <em>(Late July, Trumansburg)</em> — Four days, multiple stages, and camping at the fairgrounds.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.downtownithaca.com/apple-harvest-festival/">Apple Harvest Festival</a></strong> <em>(Early October, Ithaca Commons)</em> — Cider donuts, local apples, crafts.
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Worth the Drive</h3>
+            <span class="distance-badge">35–75 min</span>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/watkinsglen/">Watkins Glen State Park</a></strong> — 19 waterfalls in a 2-mile gorge, stone bridges and tunnels.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://home.cmog.org/">Corning Museum of Glass</a></strong> — Live glassblowing, galleries, and hands-on experiences.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://www.fws.gov/refuge/montezuma/">Montezuma National Wildlife Refuge</a></strong> — Birding, auto tour, seasonal migrations.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Visitor Information</h2>
+            <div class="place-grid">
+                <div class="place-item">
+                    <strong><a href="https://www.visitithaca.com/">Downtown Ithaca Visitor Center</a></strong> — Year-round info, maps, and event guides.
+                </div>
+                <div class="place-item">
+                    <strong><a href="https://parks.ny.gov/parks/taughannockfalls/">Taughannock Overlook Visitor Center</a></strong> — Seasonal, with park maps and exhibits.
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation-buttons">
+            <a href="index.html" class="nav-button">Back to Homepage</a>
+            <a href="guidebook.html" class="nav-button">House Guide</a>
+        </div>
+    </div>
+</body>
+</html>
