@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>79 West Main - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,118 +15,200 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
-            color: #f5f5dc;
-            height: 100vh;
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #9BAE8A 0%, #B88746 40%, #F5F1E8 100%);
+            color: #4A4A48;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden;
+            padding: 1rem;
         }
 
         .container {
-            max-width: 600px;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 650px;
+            padding: 3rem 2.5rem;
+            background: rgba(245, 241, 232, 0.95);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(155, 174, 138, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9BAE8A 0%, #B88746 50%, #9BAE8A 100%);
+        }
+
+        .decorative-element {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #B88746 50%, transparent 100%);
+            margin: 0 auto 2rem;
+            opacity: 0.6;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
+            font-family: 'Lora', serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #4A4A48;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .address {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #9BAE8A;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
             font-style: italic;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: #B88746;
+            font-weight: 400;
         }
 
         .description {
+            font-family: 'Lora', serif;
             font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            color: #4A4A48;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
         }
 
         .coming-soon {
-            font-size: 1.3rem;
-            padding: 1rem 2rem;
-            border: 2px solid #f5f5dc;
-            border-radius: 50px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 1rem 2.5rem;
+            border: 2px solid #9BAE8A;
+            border-radius: 40px;
             background: transparent;
-            color: #f5f5dc;
+            color: #9BAE8A;
             display: inline-block;
-            margin-top: 1rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(155, 174, 138, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .coming-soon:hover::before {
+            left: 100%;
         }
 
         .coming-soon:hover {
-            background: #f5f5dc;
-            color: #8B4513;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: #9BAE8A;
+            color: #F5F1E8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(155, 174, 138, 0.3);
+        }
+
+        .flourish {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.03;
+            background-image: radial-gradient(circle, #B88746 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+
+        .flourish-1 {
+            top: -30px;
+            left: -30px;
+            transform: rotate(45deg);
+        }
+
+        .flourish-2 {
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(225deg);
         }
 
         @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2.5rem 1.8rem;
+            }
+            
             h1 {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
             
             .subtitle {
                 font-size: 1.2rem;
             }
             
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
+            .description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .coming-soon {
+                font-size: 0.9rem;
+                padding: 0.9rem 2rem;
             }
         }
 
-        .grain {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');
-            pointer-events: none;
-            animation: grain 8s steps(10) infinite;
-        }
-
-        @keyframes grain {
-            0%, 100% { transform: translate(0, 0) }
-            10% { transform: translate(-5%, -10%) }
-            20% { transform: translate(-15%, 5%) }
-            30% { transform: translate(7%, -25%) }
-            40% { transform: translate(-5%, 25%) }
-            50% { transform: translate(-15%, 10%) }
-            60% { transform: translate(15%, 0%) }
-            70% { transform: translate(0%, 15%) }
-            80% { transform: translate(3%, 35%) }
-            90% { transform: translate(-10%, 10%) }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: -0.5px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="grain"></div>
     <div class="container">
+        <div class="flourish flourish-1"></div>
+        <div class="flourish flourish-2"></div>
+        
+        <div class="decorative-element"></div>
+        
         <h1>79 West Main</h1>
-        <div class="subtitle">Refined Rustic Luxury</div>
+        <div class="address">Luxury Barn Retreat</div>
+        
+        <div class="subtitle">Where Heritage Meets Modern Comfort</div>
+        
         <div class="description">
-            A beautifully restored barn offering an unforgettable retreat experience. 
-            Combining historic charm with modern luxury amenities.
+            A thoughtfully restored 19th-century barn, reimagined as an intimate luxury retreat. 
+            Experience the perfect harmony of rustic charm and contemporary elegance in our carefully curated space.
         </div>
-        <div class="coming-soon">Coming Soon</div>
+        
+        <div class="coming-soon">Opening Soon</div>
     </div>
 </body>
 </html>
