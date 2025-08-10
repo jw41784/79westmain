@@ -3,3 +3,7 @@ compatibility_date = "2025-08-10"
 
 [assets]
 directory = "."
+
+[[routes]]
+pattern = "79westmain.com/*"
+zone_name = "79westmain.com"
