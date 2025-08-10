@@ -65,240 +65,30 @@
         }
 
         .barn-icon {
-            width: 80px;
-            height: 60px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 2rem;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        /* Barn raising animation - each element starts hidden */
-        .barn-foundation {
-            stroke: #9BAE9B;
-            stroke-width: 2.5;
-            fill: none;
-            stroke-linecap: round;
-            opacity: 0;
-            stroke-dasharray: 60;
-            stroke-dashoffset: 60;
+        .logo-image {
+            width: 100%;
+            height: 100%;
+            animation: fadeIn 2s ease-out;
         }
 
-        .barn-walls, .barn-roof-main {
-            stroke: #9BAE9B;
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            opacity: 0;
-            stroke-dasharray: 200;
-            stroke-dashoffset: 200;
-        }
-
-        .barn-roof-ridge {
-            stroke: #9BAE9B;
-            stroke-width: 1.8;
-            fill: none;
-            stroke-linecap: round;
-            opacity: 0;
-            stroke-dasharray: 40;
-            stroke-dashoffset: 40;
-        }
-
-        .barn-doors-left, .barn-doors-right {
-            stroke: #9BAE9B;
-            stroke-width: 1.5;
-            fill: none;
-            stroke-linecap: round;
-            opacity: 0;
-            stroke-dasharray: 80;
-            stroke-dashoffset: 80;
-        }
-
-        .barn-door-brace-left, .barn-door-brace-right {
-            stroke: #9BAE9B;
-            stroke-width: 1;
-            fill: none;
-            stroke-linecap: round;
-            opacity: 0;
-            stroke-dasharray: 60;
-            stroke-dashoffset: 60;
-        }
-
-        .barn-window {
-            stroke: #9BAE9B;
-            stroke-width: 1.2;
-            fill: none;
-            stroke-linecap: round;
-            opacity: 0;
-            stroke-dasharray: 80;
-            stroke-dashoffset: 80;
-        }
-
-        .window-glow {
-            opacity: 0;
-        }
-
-        .light-wire {
-            stroke: #7C766C;
-            stroke-width: 0.5;
-            fill: none;
-            opacity: 0;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-        }
-
-        .light {
-            fill: #D8C9B4;
-            stroke: #8E4B35;
-            stroke-width: 0.5;
-            opacity: 0;
-            transform: scale(0);
-        }
-
-
-        /* Barn Raising Animation Sequence */
-        @keyframes barnRaising {
-            /* Stage 1: Foundation (0-15%) */
-            0% { opacity: 0.8; }
-            5% { opacity: 0.8; }
-            
-            /* Foundation draws */
-            8% {
-                --foundation-opacity: 1;
-                --foundation-offset: 0;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
             }
-            
-            /* Stage 2: Walls rise (15-40%) */
-            20% {
-                --walls-opacity: 1;
-                --walls-offset: 0;
-            }
-            
-            /* Stage 3: Doors and Window (40-60%) */
-            45% {
-                --doors-opacity: 1;
-                --doors-offset: 0;
-                --window-opacity: 1;
-                --window-offset: 0;
-            }
-            
-            /* Stage 4: Roof lowers (60-75%) */
-            65% {
-                --roof-opacity: 1;
-                --roof-offset: 0;
-            }
-            
-            /* Stage 5: Weathervane (75-80%) */
-            78% {
-                --weathervane-opacity: 1;
-                --weathervane-scale: 1;
-            }
-            
-            /* Stage 6: String lights (80-90%) */
-            85% {
-                --lights-wire-opacity: 0.3;
-                --lights-wire-offset: 0;
-            }
-            88% {
-                --lights-opacity: 1;
-                --lights-scale: 1;
-            }
-            
-            /* Stage 7: Window glow (90-100%) */
-            92% {
-                --window-glow-opacity: 0.8;
-            }
-            100% {
-                --window-glow-opacity: 0.8;
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
-        /* Auto-start animations */
-        .barn-foundation {
-            animation: drawFoundation 1.5s ease-out 1s forwards;
-        }
-
-        .barn-walls {
-            animation: raiseWalls 2s ease-out 2.5s forwards;
-        }
-
-        .barn-doors-left,
-        .barn-doors-right {
-            animation: installDoors 1.5s ease-out 4.5s forwards;
-        }
-
-        .barn-door-brace-left,
-        .barn-door-brace-right {
-            animation: installBraces 1s ease-out 5.5s forwards;
-        }
-
-        .barn-window {
-            animation: installWindow 1s ease-out 5s forwards;
-        }
-
-        .barn-roof-main,
-        .barn-roof-ridge {
-            animation: lowerRoof 2s ease-in-out 6.5s forwards;
-        }
-
-        .light-wire {
-            animation: stringLights 1.5s ease-out 8.5s forwards;
-        }
-
-        .light {
-            animation: installBulbs 1s ease-out 9.5s forwards;
-        }
-
-        .window-glow {
-            animation: lightFire 1s ease-out 10.5s forwards, fireGlow 3s ease-in-out 11.5s infinite alternate;
-        }
-
-        /* Individual animation keyframes */
-        @keyframes drawFoundation {
-            to { opacity: 0.9; stroke-dashoffset: 0; }
-        }
-
-        @keyframes raiseWalls {
-            to { opacity: 1; stroke-dashoffset: 0; }
-        }
-
-        @keyframes installDoors {
-            to { opacity: 0.8; stroke-dashoffset: 0; }
-        }
-
-        @keyframes installBraces {
-            to { opacity: 0.6; stroke-dashoffset: 0; }
-        }
-
-        @keyframes installWindow {
-            to { opacity: 1; stroke-dashoffset: 0; }
-        }
-
-        @keyframes lowerRoof {
-            0% { opacity: 0; stroke-dashoffset: 200; transform: translateY(-20px); }
-            70% { opacity: 1; stroke-dashoffset: 0; transform: translateY(-2px); }
-            100% { opacity: 1; stroke-dashoffset: 0; transform: translateY(0px); }
-        }
-
-
-        @keyframes stringLights {
-            to { opacity: 0.3; stroke-dashoffset: 0; }
-        }
-
-        @keyframes installBulbs {
-            0% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1.3); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes lightFire {
-            to { opacity: 0.8; }
-        }
-
-        @keyframes fireGlow {
-            0% { opacity: 0.6; }
-            50% { opacity: 0.9; }
-            100% { opacity: 0.7; }
-        }
+        /* Removed barn animation styles - using logo.svg instead */
 
         h1 {
             font-family: 'Lora', serif;
@@ -547,59 +337,7 @@
         <div class="decorative-element"></div>
         
         <div class="barn-icon">
-            <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <!-- Gradient for warm window glow -->
-                    <radialGradient id="windowGlow" cx="50%" cy="50%" r="60%">
-                        <stop offset="0%" style="stop-color:#8E4B35;stop-opacity:0.8"/>
-                        <stop offset="70%" style="stop-color:#8E4B35;stop-opacity:0.4"/>
-                        <stop offset="100%" style="stop-color:#8E4B35;stop-opacity:0"/>
-                    </radialGradient>
-                    <!-- Filter for soft glow -->
-                    <filter id="softGlow">
-                        <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                        <feMerge> 
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/> 
-                        </feMerge>
-                    </filter>
-                </defs>
-                
-                <!-- Authentic barn structure with proper proportions -->
-                <!-- Foundation/base -->
-                <path d="M10 48 L70 48" class="barn-foundation"/>
-                
-                <!-- Main barn walls (gambrel roof barn style) -->
-                <path d="M12 48 L12 32 L68 32 L68 48" class="barn-walls"/>
-                
-                <!-- Gambrel roof (classic barn style) -->
-                <path d="M8 32 L12 32 L20 22 L40 18 L60 22 L68 32 L72 32" class="barn-roof-main"/>
-                <path d="M20 22 L60 22" class="barn-roof-ridge"/>
-                
-                <!-- Large barn doors (classic vertical board style) -->
-                <path d="M25 35 L25 48 M30 35 L30 48 M35 35 L35 48" class="barn-doors-left"/>
-                <path d="M45 35 L45 48 M50 35 L50 48 M55 35 L55 48" class="barn-doors-right"/>
-                
-                <!-- Cross braces on doors (X pattern) -->
-                <path d="M26 36 L34 46 M34 36 L26 46" class="barn-door-brace-left"/>
-                <path d="M46 36 L54 46 M54 36 L46 46" class="barn-door-brace-right"/>
-                
-                <!-- Loft window with warm glow -->
-                <rect x="36" y="24" width="8" height="6" fill="url(#windowGlow)" class="window-glow"/>
-                <path d="M35 23 L45 23 L45 31 L35 31 Z M40 23 L40 31 M35 27 L45 27" class="barn-window"/>
-                
-                <!-- String lights along roofline -->
-                <circle cx="15" cy="25" r="0.8" class="light light-1"/>
-                <circle cx="25" cy="21" r="0.8" class="light light-2"/>
-                <circle cx="35" cy="19" r="0.8" class="light light-3"/>
-                <circle cx="45" cy="19" r="0.8" class="light light-4"/>
-                <circle cx="55" cy="21" r="0.8" class="light light-5"/>
-                <circle cx="65" cy="25" r="0.8" class="light light-6"/>
-                
-                <!-- Light connecting wire -->
-                <path d="M15 25 Q25 21 35 19 Q45 19 55 21 Q65 25 65 25" class="light-wire"/>
-                
-            </svg>
+            <img src="logo.svg" alt="79th on Main Logo" class="logo-image">
         </div>
         
         <h1>
