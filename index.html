@@ -408,6 +408,26 @@
             box-shadow: 0 10px 30px rgba(155, 174, 155, 0.3);
         }
 
+        .guidebook-link {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #8E4B35;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .guidebook-link:hover {
+            color: #9BAE9B;
+            border-bottom: 2px solid #9BAE9B;
+            transform: translateY(-2px);
+        }
+
         .flourish {
             position: absolute;
             width: 80px;
@@ -571,6 +591,10 @@
         </div>
         
         <div class="coming-soon">Opening Soon</div>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="guidebook.html" class="guidebook-link">View Guest Guidebook</a>
+        </div>
     </div>
 </body>
 </html>

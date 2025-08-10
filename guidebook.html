@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79 West Main - Guest Guidebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Charlton';
+            src: url('Charlton.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #9BAE9B;
+            color: #7C766C;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #E6DCC8;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid #9BAE9B;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.3rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .number, .header .main {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #4A4A48;
+        }
+
+        .header .on {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #B88746;
+            margin: 0 0.4rem;
+        }
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: #8E4B35;
+            font-size: 1.1rem;
+        }
+
+        .nav-bar {
+            background: rgba(230, 220, 200, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 120px;
+            z-index: 99;
+            border-bottom: 1px solid rgba(155, 174, 155, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            color: #7C766C;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8E4B35;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .welcome-section {
+            background: #E6DCC8;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h2 {
+            font-family: 'Charlton', serif;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #4A4A48;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .welcome-section p {
+            line-height: 1.8;
+            color: #7C766C;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .section {
+            background: #E6DCC8;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-family: 'Charlton', serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #4A4A48;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #9BAE9B;
+        }
+
+        .section h3 {
+            font-family: 'Libre Baskerville', serif;
+            color: #8E4B35;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-card {
+            background: rgba(216, 201, 180, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #9BAE9B;
+        }
+
+        .info-card h4 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            color: #4A4A48;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .info-card p {
+            color: #7C766C;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            color: #7C766C;
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-box {
+            background: linear-gradient(135deg, #8E4B35 0%, #A85D47 100%);
+            color: #E6DCC8;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .emergency-box h3 {
+            font-family: 'Charlton', serif;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #E6DCC8;
+        }
+
+        .emergency-box p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .emergency-box a {
+            color: #E6DCC8;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: rgba(155, 174, 155, 0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #9BAE9B;
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .back-home a {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid #E6DCC8;
+            color: #E6DCC8;
+            text-decoration: none;
+            border-radius: 40px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: all 0.4s ease;
+        }
+
+        .back-home a:hover {
+            background: #E6DCC8;
+            color: #9BAE9B;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 220, 200, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+
+            .nav-bar {
+                top: 160px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <span class="number">79TH</span>
+            <span class="on">ON</span>
+            <span class="main">MAIN</span>
+        </h1>
+        <div class="tagline">Guest Guidebook</div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="#welcome">Welcome</a>
+            <a href="#wifi">WiFi</a>
+            <a href="#kitchen">Kitchen</a>
+            <a href="#climate">Climate</a>
+            <a href="#entertainment">Entertainment</a>
+            <a href="#outdoor">Outdoor</a>
+            <a href="#checkout">Check-out</a>
+            <a href="#local">Local Area</a>
+            <a href="#help">Help</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="welcome-section" id="welcome">
+            <h2>Welcome Home</h2>
+            <p>Welcome to 79th on Main, where barn charm meets boutique comfort. This lovingly restored 1920s barn has been transformed into your personal countryside retreat, complete with modern amenities and timeless character.</p>
+            <p>This guidebook contains everything you need for a comfortable stay. Take a moment to settle in, pour yourself something delicious from the kitchen, and let the tranquility of the countryside wash over you.</p>
+            <p>We're delighted to have you as our guest. May your time here be filled with rest, renewal, and beautiful memories.</p>
+        </section>
+
+        <div class="emergency-box">
+            <h3>Emergency Contacts</h3>
+            <p><strong>Emergency Services:</strong> 911</p>
+            <p><strong>Host (Jason):</strong> <a href="tel:555-0123">(555) 012-3456</a></p>
+            <p><strong>Property Manager:</strong> <a href="tel:555-0789">(555) 078-9012</a></p>
+        </div>
+
+        <section class="section" id="wifi">
+            <h2>WiFi & Essentials</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>WiFi Network</h4>
+                    <p><strong>Network:</strong> 79WestMain_Guest</p>
+                    <p><strong>Password:</strong> BarnLife2024</p>
+                </div>
+                <div class="info-card">
+                    <h4>Check-in/Check-out</h4>
+                    <p><strong>Check-in:</strong> 4:00 PM</p>
+                    <p><strong>Check-out:</strong> 11:00 AM</p>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Door Code:</strong> Your unique door code was sent via email. The keypad is located on the main entrance. Press the checkmark after entering your code.</p>
+            </div>
+        </section>
+
+        <section class="section" id="kitchen">
+            <h2>Kitchen & Appliances</h2>
+            
+            <h3>Coffee Station</h3>
+            <p>Start your morning right with our fully stocked coffee bar:</p>
+            <ul>
+                <li><strong>Espresso Machine:</strong> Press power button, wait for green light, insert pod, select size</li>
+                <li><strong>French Press:</strong> Add coarse grounds (3 tbsp), pour hot water, steep 4 minutes, press slowly</li>
+                <li><strong>Drip Coffee Maker:</strong> Add filter and grounds to basket, fill reservoir, press brew</li>
+            </ul>
+
+            <h3>Major Appliances</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Refrigerator</h4>
+                    <p>Temperature controls inside top compartment. Ice maker in freezer door.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Dishwasher</h4>
+                    <p>Pods under sink. Select "Normal" cycle for everyday use. Press and hold start for 3 seconds.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Range & Oven</h4>
+                    <p>Gas range with electric oven. Push and turn knobs for burners. Digital controls for oven.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Microwave</h4>
+                    <p>Above range. Press time, then START. Use SENSOR REHEAT for automatic settings.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Pantry Essentials:</strong> Basic spices, oils, and cooking essentials are provided. Local farmers market on Saturdays for fresh produce!</p>
+            </div>
+        </section>
+
+        <section class="section" id="climate">
+            <h2>Climate & Comfort</h2>
+            
+            <h3>Heating & Cooling</h3>
+            <p>The barn features a modern HVAC system with smart thermostats:</p>
+            <ul>
+                <li><strong>Main Living Area:</strong> Thermostat by kitchen entrance</li>
+                <li><strong>Bedroom Zone:</strong> Separate control in hallway</li>
+                <li><strong>Optimal Settings:</strong> Summer 72°F | Winter 68°F</li>
+            </ul>
+
+            <h3>Fireplace</h3>
+            <div class="highlight-box">
+                <p><strong>Gas Fireplace Instructions:</strong></p>
+                <ol>
+                    <li>Ensure flue is open (lever on right side)</li>
+                    <li>Turn gas valve to "ON" position</li>
+                    <li>Press ignitor button while turning control knob</li>
+                    <li>Hold for 30 seconds until pilot lights</li>
+                    <li>Use remote control for flame height</li>
+                </ol>
+            </div>
+
+            <h3>Windows & Ventilation</h3>
+            <p>Original barn windows have been restored and are fully operational. Screens are installed spring through fall. Ceiling fans in all rooms - pull chain for speed, wall switch for power.</p>
+        </section>
+
+        <section class="section" id="entertainment">
+            <h2>Entertainment Systems</h2>
+            
+            <h3>Smart TV</h3>
+            <ul>
+                <li><strong>Power:</strong> Red button on Samsung remote</li>
+                <li><strong>Streaming:</strong> Netflix, Hulu, Prime Video pre-installed</li>
+                <li><strong>Cable:</strong> Press SOURCE, select "Cable Box"</li>
+                <li><strong>Sound Bar:</strong> Volume on second remote</li>
+            </ul>
+
+            <h3>Music System</h3>
+            <p>Bluetooth speakers throughout the barn. Connect via "79Main_Audio" on your device. No password required.</p>
+
+            <h3>Board Games & Books</h3>
+            <p>Curated collection in the living room cabinet. Local guidebooks and hiking maps on the entry table.</p>
+        </section>
+
+        <section class="section" id="outdoor">
+            <h2>Outdoor Spaces</h2>
+            
+            <h3>Fire Pit</h3>
+            <div class="highlight-box">
+                <p>Firewood stacked beside barn. Kindling in copper bucket. Matches and fire starters in weatherproof box. Please fully extinguish before retiring.</p>
+            </div>
+
+            <h3>Grill</h3>
+            <ul>
+                <li>Propane tank valve on top of tank (turn counterclockwise)</li>
+                <li>Push and turn burner knobs to ignite</li>
+                <li>Grill tools in drawer below</li>
+                <li>Extra propane tank in shed if needed</li>
+            </ul>
+
+            <h3>Hot Tub</h3>
+            <p><strong>Temperature:</strong> Pre-set to 102°F. Press JETS for bubbles. Cover when not in use. Towels in outdoor cabinet.</p>
+
+            <h3>Gardens</h3>
+            <p>Feel free to pick herbs from the kitchen garden. Tomatoes and vegetables are yours to enjoy when in season!</p>
+        </section>
+
+        <section class="section" id="checkout">
+            <h2>Check-out Process</h2>
+            <p>We hope you've enjoyed your stay! Before departing:</p>
+            <ul>
+                <li>Load and start dishwasher</li>
+                <li>Strip beds and place linens in laundry basket</li>
+                <li>Take trash to bins at end of driveway</li>
+                <li>Turn off all lights and ceiling fans</li>
+                <li>Set thermostat to 65°F (winter) or 78°F (summer)</li>
+                <li>Lock door and ensure it latches</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Late Check-out:</strong> Available upon request for $50 (subject to availability). Text host by 9 AM on departure day.</p>
+            </div>
+        </section>
+
+        <section class="section" id="local">
+            <h2>Local Area Guide</h2>
+            
+            <h3>Dining Favorites</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>The Mill Restaurant</h4>
+                    <p>Farm-to-table dining. 5 minutes away. Reservations recommended.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Main Street Café</h4>
+                    <p>Best breakfast in town. Opens 7 AM. Try the barn-raised pancakes!</p>
+                </div>
+                <div class="info-card">
+                    <h4>Giuseppe's</h4>
+                    <p>Authentic Italian. Wood-fired pizza. 10-minute drive.</p>
+                </div>
+                <div class="info-card">
+                    <h4>The Local Pub</h4>
+                    <p>Craft beers and comfort food. Live music Fridays.</p>
+                </div>
+            </div>
+
+            <h3>Activities & Attractions</h3>
+            <ul>
+                <li><strong>Farmers Market:</strong> Saturdays 8 AM-1 PM, Town Square</li>
+                <li><strong>Hiking Trails:</strong> Blue Ridge Trail (2 miles), starts behind property</li>
+                <li><strong>Winery Tours:</strong> Three vineyards within 15 minutes</li>
+                <li><strong>Antique Shopping:</strong> Main Street Antiques Row</li>
+                <li><strong>Lake Activities:</strong> Kayak rentals at Sunset Marina (20 min)</li>
+            </ul>
+
+            <h3>Essentials</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Grocery Store</h4>
+                    <p>Wilson's Market - 5 min drive<br>Open 7 AM - 10 PM daily</p>
+                </div>
+                <div class="info-card">
+                    <h4>Pharmacy</h4>
+                    <p>CVS on Main Street<br>Open 8 AM - 9 PM</p>
+                </div>
+                <div class="info-card">
+                    <h4>Hospital</h4>
+                    <p>Regional Medical Center<br>15 minutes via Route 29</p>
+                </div>
+                <div class="info-card">
+                    <h4>Gas Station</h4>
+                    <p>Shell at Main & Oak<br>24 hours</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="help">
+            <h2>Need Help?</h2>
+            
+            <h3>Common Issues</h3>
+            <div class="highlight-box">
+                <p><strong>No hot water?</strong> Water heater reset button is in utility closet (red button on top of unit)</p>
+                <p><strong>WiFi not working?</strong> Unplug router for 30 seconds (behind TV stand)</p>
+                <p><strong>Circuit breaker tripped?</strong> Panel in hallway closet, labeled clearly</p>
+                <p><strong>Door code not working?</strong> Try code again slowly, or use backup key in lockbox (code sent via email)</p>
+            </div>
+
+            <h3>House Manual</h3>
+            <p>Detailed appliance manuals and warranties are in the kitchen drawer beside the refrigerator.</p>
+
+            <h3>Contact Us</h3>
+            <p>For any non-emergency issues or questions:</p>
+            <ul>
+                <li><strong>Text preferred:</strong> (555) 012-3456</li>
+                <li><strong>Email:</strong> stay@79westmain.com</li>
+                <li><strong>Response time:</strong> Usually within 1 hour during 8 AM - 10 PM</li>
+            </ul>
+        </section>
+
+        <div class="back-home">
+            <a href="index.html">Back to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>
