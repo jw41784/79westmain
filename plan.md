@@ -79,11 +79,10 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 ## Style Guide
 
 ### Colors
-- **Sage Green** – muted, calming, heritage green (#9BAE8A)
-- **Antique White** – creamy white with warmth (#F5F1E8)  
-- **Warm Oak** – honey-toned wood (#B88746)
-- **Charcoal Gray** – grounding neutral (#4A4A48)
-- **Soft Linen Beige** – upholstery and layered neutrals (#D8CFC4)
+- **Sage Green** – muted, calming heritage green (#9BAE9B)
+- **Warm Taupe** – soft, sophisticated neutral (#7C766C)
+- **Cream Beige** – warm, inviting light tone (#D8C9B4)  
+- **Rust Brown** – rich, earthy accent (#8E4B35)
 
 ### Typography
 - **Primary font**: Charlton (custom OTF) – Main headers with wide letter spacing (0.405em)

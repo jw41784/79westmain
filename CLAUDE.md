@@ -14,7 +14,7 @@ A luxury barn retreat's digital guidebook featuring an elegant coming soon page 
 ## Key Features
 - **Magical Animation**: 11-second barn construction sequence (foundation → walls → doors → roof → string lights → warm firelight)
 - **Typography**: Custom Charlton font with wide letter spacing (0.405em)
-- **Brand Colors**: Sage green (#9BAE8A), warm oak (#B88746), antique white (#F5F1E8)
+- **Brand Colors**: Sage green (#9BAE9B), warm taupe (#7C766C), cream beige (#D8C9B4), rust brown (#8E4B35)
 - **Auto-deploy**: GitHub integration with Cloudflare Workers
 
 ## Tech Stack
