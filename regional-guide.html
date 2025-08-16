@@ -69,6 +69,20 @@
             margin: 0 0.4rem;
         }
 
+        .title-link {
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .title-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .title-link h1 {
+            margin: 0;
+        }
+
         .tagline {
             font-family: 'Libre Baskerville', serif;
             font-style: italic;
@@ -417,11 +431,13 @@
 </head>
 <body>
     <div class="header">
-        <h1>
-            <span class="number">79TH</span>
-            <span class="on">ON</span>
-            <span class="main">MAIN</span>
-        </h1>
+        <a href="index.html" class="title-link">
+            <h1>
+                <span class="number">79TH</span>
+                <span class="on">ON</span>
+                <span class="main">MAIN</span>
+            </h1>
+        </a>
         <div class="tagline">Finger Lakes Regional Guide</div>
     </div>
 
