@@ -38,12 +38,12 @@
             max-width: 650px;
             padding: 3rem 2.5rem;
             background: #E6DCC8;
-            border-radius: 20px;
             backdrop-filter: blur(15px);
             border: 1px solid rgba(155, 174, 155, 0.3);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
         }
 
         .container::before {

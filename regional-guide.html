@@ -153,10 +153,11 @@
 
         .section {
             background: #E6DCC8;
-            border-radius: 20px;
             padding: 2.5rem 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            position: relative;
         }
 
         .section h2 {
@@ -187,9 +188,10 @@
         .quick-hit-card {
             background: rgba(155, 174, 155, 0.12);
             padding: 1.5rem;
-            border-radius: 15px;
             border-left: 4px solid #8E4B35;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            position: relative;
         }
 
         .quick-hit-card:hover {
@@ -219,9 +221,10 @@
         .place-item {
             padding: 1.2rem;
             background: rgba(216, 201, 180, 0.25);
-            border-radius: 12px;
             border-left: 3px solid #9BAE9B;
             transition: all 0.3s ease;
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            position: relative;
         }
 
         .place-item:hover {
@@ -258,18 +261,19 @@
             background: #9BAE9B;
             color: #E6DCC8;
             padding: 0.2rem 0.6rem;
-            border-radius: 12px;
             font-size: 0.85rem;
             margin-left: 0.5rem;
             font-weight: 500;
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
         }
 
         .itinerary-card {
             background: linear-gradient(135deg, rgba(155, 174, 155, 0.1) 0%, rgba(142, 75, 53, 0.05) 100%);
             padding: 2rem;
-            border-radius: 15px;
             margin-bottom: 2rem;
             border: 1px solid rgba(155, 174, 155, 0.2);
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            position: relative;
         }
 
         .itinerary-card h3 {
@@ -312,9 +316,10 @@
         .tips-box {
             background: rgba(142, 75, 53, 0.08);
             padding: 2rem;
-            border-radius: 15px;
             margin-top: 2rem;
             border-left: 4px solid #8E4B35;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            position: relative;
         }
 
         .tips-box h3 {
@@ -358,11 +363,11 @@
             border: 2px solid #E6DCC8;
             color: #E6DCC8;
             text-decoration: none;
-            border-radius: 40px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             font-weight: 400;
             transition: all 0.4s ease;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
         }
 
         .nav-button:hover {
