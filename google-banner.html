@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79 West Main - Google Maps Banner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Charlton';
+            src: url('Charlton.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Google Maps recommended banner size: 1080x608px (16:9 ratio) */
+        .banner-container {
+            width: 1080px;
+            height: 608px;
+            background: linear-gradient(135deg, #9BAE9B 0%, #E6DCC8 50%, #9BAE9B 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Background pattern */
+        .banner-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(142, 75, 53, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(155, 174, 155, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Decorative barn silhouette */
+        .barn-silhouette {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.08;
+            background: #8E4B35;
+            clip-path: polygon(
+                0% 40%, 50% 0%, 100% 40%,
+                100% 100%, 85% 100%, 85% 60%, 15% 60%, 15% 100%, 0% 100%
+            );
+        }
+
+        /* Left barn silhouette */
+        .barn-silhouette-left {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%) scaleX(-1);
+            opacity: 0.08;
+            background: #8E4B35;
+            clip-path: polygon(
+                0% 40%, 50% 0%, 100% 40%,
+                100% 100%, 85% 100%, 85% 60%, 15% 60%, 15% 100%, 0% 100%
+            );
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 40px;
+            background: rgba(230, 220, 200, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            border: 3px solid rgba(155, 174, 155, 0.3);
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .logo-section img {
+            width: 120px;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        h1 {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.4rem;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: #4A4A48;
+        }
+
+        .number {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+        }
+
+        .on {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #8E4B35;
+            margin: 0 0.5rem;
+        }
+
+        .main {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #7C766C;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #8E4B35;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .location {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            color: #7C766C;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .location::before,
+        .location::after {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9BAE9B, transparent);
+        }
+
+        /* Decorative corners */
+        .corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(155, 174, 155, 0.3);
+        }
+
+        .corner-tl {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-tr {
+            top: 20px;
+            right: 20px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bl {
+            bottom: 20px;
+            left: 20px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-br {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Instructions for screenshot */
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 1080px;
+        }
+
+        .instructions h2 {
+            color: #4A4A48;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #7C766C;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        .instructions code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="banner-container">
+            <!-- Decorative corners -->
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <!-- Barn silhouettes -->
+            <div class="barn-silhouette"></div>
+            <div class="barn-silhouette-left"></div>
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+                <div class="logo-section">
+                    <img src="BARN transparent.png" alt="79th on Main Logo">
+                </div>
+                
+                <h1>
+                    <span class="number">79TH</span>
+                    <span class="on">ON</span>
+                    <span class="main">MAIN</span>
+                </h1>
+                
+                <div class="tagline">Barn Charm, Reimagined</div>
+                
+                <div class="subtitle">Luxury Countryside Retreat</div>
+                
+                <div class="location">State College, Pennsylvania</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>How to Save as Google Maps Banner</h2>
+            <ol>
+                <li><strong>On Mac:</strong> Press <code>Cmd + Shift + 4</code>, then press <code>Space</code>, click on the banner above</li>
+                <li><strong>On Windows:</strong> Press <code>Win + Shift + S</code>, select the banner area</li>
+                <li><strong>Alternative:</strong> Right-click the banner → "Inspect" → Right-click the <code>&lt;div class="banner-container"&gt;</code> → "Capture node screenshot"</li>
+                <li>The banner is sized at 1080x608px (16:9 ratio) - perfect for Google Maps cover photos</li>
+                <li>Upload the saved image to your Google Business Profile as your cover photo</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
