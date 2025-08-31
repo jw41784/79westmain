@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79 West Main - Luxury Barn Retreat in the Finger Lakes</title>
+    <meta name="description" content="Experience barn charm reimagined at 79th on Main. A luxury countryside retreat in the Finger Lakes region with modern amenities and timeless character. Book your stay today!">
+    <meta property="og:title" content="79 West Main - Luxury Barn Retreat">
+    <meta property="og:description" content="Wake up to birdsong and fresh coffee in this beautifully restored 1920s barn. The perfect blend of barn charm and boutique hotel comfort in the Finger Lakes.">
+    <meta property="og:image" content="main house.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="79 West Main - Luxury Barn Retreat">
+    <meta name="twitter:description" content="Experience barn charm reimagined. Book your countryside escape in the Finger Lakes.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Charlton';
+            src: url('Charlton.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #9BAE9B;
+            color: #7C766C;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 650px;
+            padding: 3rem 2.5rem;
+            background: #E6DCC8;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(155, 174, 155, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9BAE9B 0%, #8E4B35 50%, #9BAE9B 100%);
+        }
+
+        .decorative-element {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #8E4B35 50%, transparent 100%);
+            margin: 0 auto 1rem;
+            opacity: 0.6;
+        }
+
+        .barn-icon {
+            width: 156px;
+            height: auto;
+            margin: 0 auto 2rem;
+            opacity: 0.85;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: auto;
+            animation: fadeIn 2s ease-out;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Removed barn animation styles - using logo.svg instead */
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #4A4A48;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+        .number {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+        }
+
+        .on {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+            color: #8E4B35;
+            margin: 0 0.4rem;
+        }
+
+        .main {
+            font-family: 'Charlton', serif;
+            font-weight: normal;
+            letter-spacing: 0.405em;
+            text-transform: uppercase;
+        }
+
+        .address {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #9BAE9B;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+
+        .subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: #8E4B35;
+            font-weight: 400;
+        }
+
+        .description {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            color: #7C766C;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .coming-soon {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 1rem 2.5rem;
+            border: 2px solid #9BAE9B;
+            border-radius: 40px;
+            background: transparent;
+            color: #9BAE9B;
+            display: inline-block;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(155, 174, 155, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .coming-soon:hover::before {
+            left: 100%;
+        }
+
+        .coming-soon:hover {
+            background: #9BAE9B;
+            color: #D8C9B4;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(155, 174, 155, 0.3);
+        }
+
+        .guidebook-link {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #8E4B35;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .guidebook-link:hover {
+            color: #9BAE9B;
+            border-bottom: 2px solid #9BAE9B;
+            transform: translateY(-2px);
+        }
+
+        .flourish {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.06;
+            background-image: radial-gradient(circle, #8E4B35 0.8px, transparent 1px);
+            background-size: 6px 6px;
+            border-radius: 50%;
+        }
+
+        .flourish-1 {
+            top: -20px;
+            left: -20px;
+            transform: rotate(45deg);
+            animation: flourishFloat1 8s ease-in-out infinite;
+        }
+
+        .flourish-2 {
+            bottom: -20px;
+            right: -20px;
+            transform: rotate(225deg);
+            animation: flourishFloat2 10s ease-in-out infinite;
+        }
+
+        @keyframes flourishFloat1 {
+            0%, 100% { transform: rotate(45deg) translateX(0px) translateY(0px); opacity: 0.06; }
+            50% { transform: rotate(47deg) translateX(2px) translateY(-1px); opacity: 0.08; }
+        }
+
+        @keyframes flourishFloat2 {
+            0%, 100% { transform: rotate(225deg) translateX(0px) translateY(0px); opacity: 0.06; }
+            50% { transform: rotate(223deg) translateX(-2px) translateY(1px); opacity: 0.08; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2.5rem 1.8rem;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .on {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .coming-soon {
+                font-size: 0.9rem;
+                padding: 0.9rem 2rem;
+            }
+
+            .guidebook-link {
+                display: block;
+                margin: 0.8rem auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: -0.5px;
+                flex-direction: column;
+                gap: 0.1rem;
+                align-items: center;
+                text-align: center;
+            }
+
+            .on {
+                font-size: 1.4rem;
+                transform: translateY(0);
+                align-self: center;
+            }
+
+            .number, .main {
+                letter-spacing: -1px;
+                align-self: center;
+            }
+
+            .guide-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .guide-separator {
+                display: block !important;
+                margin: 0.3rem 0 !important;
+                font-size: 1.2rem;
+            }
+
+            .guidebook-link {
+                width: auto;
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flourish flourish-1"></div>
+        <div class="flourish flourish-2"></div>
+        
+        <div class="decorative-element"></div>
+        
+        <div class="barn-icon">
+            <img src="BARN transparent.png" alt="79th on Main Barn Logo" class="logo-image">
+        </div>
+        
+        <h1>
+            <span class="number">79TH</span>
+            <span class="on">ON</span>
+            <span class="main">MAIN</span>
+        </h1>
+        <div class="address">Barn Charm, Reimagined</div>
+        
+        <div class="subtitle">A Modern Take on the Timeless Countryside Getaway</div>
+        
+        <div class="description">
+            Wake up to the sound of birdsong and the scent of fresh coffee drifting through the kitchen. Trade your to-do list for a front porch rocking chair and a good book. The perfect blend of barn charm and boutique hotel comfort.
+        </div>
+        
+        <a href="https://airbnb.com/h/79westmain" class="coming-soon" style="text-decoration: none;">Book Your Stay</a>
+    </div>
+</body>
+</html>
