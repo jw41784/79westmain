@@ -36,6 +36,9 @@ A luxury barn retreat's digital guidebook featuring an elegant coming soon page 
 ## Development Commands
 No build process required - static HTML deployment.
 
+## Git Workflow
+All changes should be automatically committed and pushed to git after completion unless explicitly told not to.
+
 ## Next Phase
 Full digital guidebook with QR code integration for guest amenities and instructions.
 
