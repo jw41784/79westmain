@@ -70,7 +70,7 @@ This guide blends our *Things To Do* list with curated *Rainy Day* and *Weekend 
 
 ## Markets & Local Food (5–25 min)
 
-- **[Trumansburg Farmers’ Market](https://www.trumansburgfarmersmarket.com/)** — Wednesdays, 4–7 pm (May–Oct); produce, crafts, prepared foods, live music.  
+- **[Trumansburg Farmers’ Market](https://www.tburgfarmersmarket.com/)** — Wednesdays, 4–7 pm (May–Oct); produce, crafts, prepared foods, live music.  
 - **[Ithaca Farmers Market](https://ithacamarket.com/)** — 100+ vendors at Steamboat Landing; produce, prepared food, flowers, and crafts.
 
 ---
@@ -83,7 +83,7 @@ This guide blends our *Things To Do* list with curated *Rainy Day* and *Weekend 
 - **[Cornell Botanic Gardens](https://cornellbotanicgardens.org/)** — Gardens, arboretum, and natural areas.  
 - **[Museum of the Earth](https://www.museumoftheearth.org/)** — Fossils, dinosaurs, Ice Age geology.  
 - **[Sciencenter](https://www.sciencenter.org/)** — Hands-on science museum for all ages.  
-- **[Sagan Planet Walk](https://www.sciencenter.org/sagan-planet-walk.html)** — 3/4-mile solar system model from the Commons to the Sciencenter.  
+- **[Sagan Planet Walk](https://sciencenter.org/experiences/sagan/)** — 3/4-mile solar system model from the Commons to the Sciencenter.  
 - **[Ithaca Children’s Garden](https://ithacachildrensgarden.org/)** — Playful outdoor space with whimsical features.
 
 ---

@@ -1,11 +1,16 @@
 # 79th on Main - Digital Guest Guidebook
 
 ## Project Overview
-A digital guidebook and marketing site for "79th on Main," a luxury barn retreat in
-the Finger Lakes region of New York. The site is a small set of static, hand-written
+A digital guidebook and marketing site for "79th on Main," a luxury barn retreat at
+**79 West Main Street, Trumansburg, NY 14886**, in the Finger Lakes region of New York
+(lat 42.5437827, lon -76.6688425). The site is a small set of static, hand-written
 HTML pages: a marketing landing page, an in-stay guest guidebook, a regional area
 guide, and a standalone booking page. It is QR-code driven — guests scan codes placed
 around the property to deep-link into guidebook sections.
+
+> **Location note:** the property is in Trumansburg, NY. The owners (Jason & Kristen)
+> are originally from State College, PA — keep that distinction; the property's address,
+> geo coordinates, and Google Business data must stay NY, not PA.
 
 ## Development Status
 **Live in production.** The original "coming soon" / barn-raising animation page has
