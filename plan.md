@@ -74,7 +74,7 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 - ✅ GitHub repository: https://github.com/jw41784/79westmain
 - ✅ Custom domain configured via DNS CNAME
 - ✅ SSL certificate (automatic with Cloudflare)
-- ✅ Coming soon page deployed with barn raising animation
+- ✅ Full multi-page guidebook site deployed (index, house-guide, regional-guide, book)
 
 ## Style Guide
 
@@ -107,17 +107,17 @@ A high-quality, mobile-first informational website for a refined rustic luxury b
 - ✅ Subtle decorative flourishes
 
 ## Current Status
-✅ **Phase 1 Complete**: Coming soon page with brand identity
-- Animated barn construction sequence
-- Proper typography hierarchy
-- Brand colors and voice implemented
-- Mobile responsive design
-- Auto-deploying from GitHub
+✅ **Live multi-page site** (this plan is historical; the coming-soon page has been replaced):
+- **index.html** — marketing landing page
+- **house-guide.html** — in-stay guest guidebook (WiFi, locks, appliances, check-out)
+- **regional-guide.html** — Finger Lakes area guide
+- **book.html** — standalone booking / Google Business SEO page
+- Brand colors, voice, and Charlton typography implemented across all pages
+- Per-page SEO (meta, Open Graph, canonical) and schema.org LodgingBusiness data
+- Mobile responsive, auto-deploying from GitHub to Cloudflare Workers
 
-## Next Steps
-1. Create full site structure and navigation
-2. Add content sections with visual instructions  
-3. Implement QR code functionality
-4. Add photography and visual content
-5. Create offline PWA capabilities
-6. Test across devices and optimize performance
+## Possible Future Enhancements
+1. Offline-capable PWA
+2. In-page search across the guidebook
+3. Per-appliance deep-link anchors for QR codes
+4. Additional property photography
