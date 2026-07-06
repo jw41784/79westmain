@@ -915,14 +915,24 @@
         // One-tap copy for the WiFi password
         const copyBtn = document.getElementById('copyWifi');
         if (copyBtn) copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText('barnlife79').then(() => {
+            const reset = () => {
+                copyBtn.textContent = 'Copy Password';
+                copyBtn.classList.remove('copied');
+            };
+            const copied = () => {
                 copyBtn.textContent = 'Copied!';
                 copyBtn.classList.add('copied');
-                setTimeout(() => {
-                    copyBtn.textContent = 'Copy Password';
-                    copyBtn.classList.remove('copied');
-                }, 2000);
-            });
+                setTimeout(reset, 2000);
+            };
+            const failed = () => {
+                copyBtn.textContent = 'Copy didn’t work — password is above';
+                setTimeout(reset, 3000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText('barnlife79').then(copied, failed);
+            } else {
+                failed();
+            }
         });
 
         // Back-to-top

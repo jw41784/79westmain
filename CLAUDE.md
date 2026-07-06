@@ -39,6 +39,10 @@ Cross-linking: index ↔ house-guide ↔ regional-guide. book.html stands alone 
   Google Business.
 - **Offline / PWA**: sw.js caches both guides (network-first for pages) so the guidebook
   works on spotty rural cell coverage; manifest.webmanifest makes it installable.
+  **Cache discipline:** assets (images/fonts) are cache-first under stable filenames —
+  when replacing any deployed image or font, bump the `CACHE` version in sw.js or
+  returning visitors will keep the old file. HTML is network-first, so text edits
+  need no bump.
 - **Guest conveniences**: inline WiFi QR code + copy-password button (house-guide),
   Google Maps links on every address (regional-guide), sms:/tel: host links,
   print stylesheet on the house guide.
