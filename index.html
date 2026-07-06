@@ -7,7 +7,7 @@
     <meta name="description" content="Experience barn charm reimagined at 79th on Main. A luxury countryside retreat in the Finger Lakes region with modern amenities and timeless character. Book your stay today!">
     <meta property="og:title" content="79 West Main - Luxury Barn Retreat">
     <meta property="og:description" content="Wake up to birdsong and fresh coffee in this beautifully restored 1920s barn. The perfect blend of barn charm and boutique hotel comfort in the Finger Lakes.">
-    <meta property="og:image" content="https://79westmain.com/main%20house.jpg">
+    <meta property="og:image" content="https://79westmain.com/og-image.jpg">
     <meta property="og:url" content="https://79westmain.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -15,15 +15,19 @@
     <meta name="twitter:description" content="Experience barn charm reimagined. Book your countryside escape in the Finger Lakes.">
     <link rel="canonical" href="https://79westmain.com/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#9BAE9B">
+    <link rel="preload" href="Charlton.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Charlton';
-            src: url('Charlton.otf') format('opentype');
+            src: url('Charlton.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         * {
@@ -35,7 +39,7 @@
         body {
             font-family: 'Raleway', sans-serif;
             background: #9BAE9B;
-            color: #7C766C;
+            color: #666055;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -99,10 +103,7 @@
             }
         }
 
-        /* Removed barn animation styles - using logo.svg instead */
-
         h1 {
-            font-family: 'Lora', serif;
             font-size: 3.2rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
@@ -142,7 +143,7 @@
             font-family: 'Raleway', sans-serif;
             font-size: 0.95rem;
             font-weight: 300;
-            color: #9BAE9B;
+            color: #526452;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 2.5rem;
@@ -157,12 +158,26 @@
             font-weight: 400;
         }
 
+        .property-photo {
+            margin: 0 auto 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid rgba(155, 174, 155, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .property-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .description {
             font-family: 'Raleway', sans-serif;
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 3rem;
-            color: #7C766C;
+            color: #666055;
             max-width: 480px;
             margin-left: auto;
             margin-right: auto;
@@ -170,15 +185,15 @@
             font-weight: 300;
         }
 
-        .coming-soon {
+        .book-button {
             font-family: 'Raleway', sans-serif;
             font-size: 1rem;
             font-weight: 400;
             padding: 1rem 2.5rem;
-            border: 2px solid #9BAE9B;
+            border: 2px solid #526452;
             border-radius: 40px;
             background: transparent;
-            color: #9BAE9B;
+            color: #526452;
             display: inline-block;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -188,7 +203,7 @@
             overflow: hidden;
         }
 
-        .coming-soon::before {
+        .book-button::before {
             content: '';
             position: absolute;
             top: 0;
@@ -199,15 +214,15 @@
             transition: left 0.6s ease;
         }
 
-        .coming-soon:hover::before {
+        .book-button:hover::before {
             left: 100%;
         }
 
-        .coming-soon:hover {
-            background: #9BAE9B;
-            color: #D8C9B4;
+        .book-button:hover {
+            background: #526452;
+            color: #E6DCC8;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(155, 174, 155, 0.3);
+            box-shadow: 0 10px 30px rgba(82, 100, 82, 0.3);
         }
 
         .guidebook-link {
@@ -225,8 +240,8 @@
         }
 
         .guidebook-link:hover {
-            color: #9BAE9B;
-            border-bottom: 2px solid #9BAE9B;
+            color: #526452;
+            border-bottom: 2px solid #526452;
             transform: translateY(-2px);
         }
 
@@ -287,7 +302,7 @@
                 line-height: 1.6;
             }
 
-            .coming-soon {
+            .book-button {
                 font-size: 0.9rem;
                 padding: 0.9rem 2rem;
             }
@@ -348,7 +363,7 @@
         <div class="decorative-element"></div>
         
         <div class="barn-icon">
-            <img src="BARN transparent.png" alt="79th on Main Barn Logo" class="logo-image">
+            <img src="barn-logo.webp" alt="79th on Main barn logo" class="logo-image" width="312" height="312" fetchpriority="high">
         </div>
         
         <h1>
@@ -359,17 +374,21 @@
         <div class="address">Barn Charm, Reimagined</div>
         
         <div class="subtitle">A Modern Take on the Timeless Countryside Getaway</div>
-        
+
+        <div class="property-photo">
+            <img src="main house.jpg" alt="The restored 1920s barn at 79th on Main in Trumansburg, NY" width="1024" height="768">
+        </div>
+
         <div class="description">
             Wake up to the sound of birdsong and the scent of fresh coffee drifting through the kitchen. Trade your to-do list for a front porch rocking chair and a good book. The perfect blend of barn charm and boutique hotel comfort.
         </div>
         
-        <a href="https://airbnb.com/h/79westmain" class="coming-soon" style="text-decoration: none;">Book Your Stay</a>
-        
+        <a href="https://airbnb.com/h/79westmain" class="book-button" style="text-decoration: none;">Book Your Stay</a>
+
         <div class="guide-links" style="margin-top: 2rem; text-align: center;">
-            <a href="house-guide.html" class="guidebook-link">House Guide</a>
-            <span class="guide-separator" style="color: #9BAE9B; margin: 0 1rem;">•</span>
-            <a href="regional-guide.html" class="guidebook-link">Regional Guide</a>
+            <a href="/house-guide" class="guidebook-link">House Guide</a>
+            <span class="guide-separator" style="color: #526452; margin: 0 1rem;">•</span>
+            <a href="/regional-guide" class="guidebook-link">Regional Guide</a>
         </div>
     </div>
 </body>

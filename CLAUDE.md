@@ -29,12 +29,22 @@ been replaced by the full multi-page site below.
 Cross-linking: index ↔ house-guide ↔ regional-guide. book.html stands alone by design.
 
 ## Key Features
-- **Typography**: Custom Charlton font with wide letter spacing (0.405em).
+- **Typography**: Custom Charlton font (served as WOFF2, `font-display: swap`) with wide
+  letter spacing (0.405em).
 - **Brand Colors**: Sage green (#9BAE9B), warm taupe (#7C766C), cream beige (#D8C9B4),
-  rust brown (#8E4B35).
-- **SEO**: Per-page meta description, Open Graph tags, canonical URLs; book.html carries
-  schema.org LodgingBusiness data for Google Business.
-- **Auto-deploy**: GitHub push → Cloudflare Workers.
+  rust brown (#8E4B35). For *text on cream*, use the darker accessible variants:
+  deep sage #526452 and deep taupe #666055 (the originals fail WCAG contrast as text).
+- **SEO**: Per-page meta description, Open Graph tags (og-image.jpg), canonical URLs,
+  robots.txt + sitemap.xml; book.html carries schema.org LodgingBusiness data for
+  Google Business.
+- **Offline / PWA**: sw.js caches both guides (network-first for pages) so the guidebook
+  works on spotty rural cell coverage; manifest.webmanifest makes it installable.
+- **Guest conveniences**: inline WiFi QR code + copy-password button (house-guide),
+  Google Maps links on every address (regional-guide), sms:/tel: host links,
+  print stylesheet on the house guide.
+- **Auto-deploy**: GitHub push → Cloudflare Workers. `.assetsignore` keeps *.md, *.toml,
+  and source assets (Charlton.otf, BARN transparent.png) off the public site; `_headers`
+  sets long-lived cache for images/fonts.
 
 ## Tech Stack
 - **Frontend**: Vanilla HTML/CSS, no build step, no framework.
@@ -46,18 +56,27 @@ Cross-linking: index ↔ house-guide ↔ regional-guide. book.html stands alone 
 ## File Structure
 ```
 ├── index.html              # Marketing landing page
-├── house-guide.html        # In-stay guest guidebook
-├── regional-guide.html     # Finger Lakes regional guide
+├── house-guide.html        # In-stay guest guidebook (WiFi QR, print styles)
+├── regional-guide.html     # Finger Lakes regional guide (maps links)
 ├── book.html               # Standalone booking / SEO page
 ├── google-banner.html      # Google Maps banner image generator
+├── sw.js                   # Service worker (offline caching of the guides)
+├── manifest.webmanifest    # PWA manifest (installable guest guide)
+├── robots.txt / sitemap.xml# Crawl directives + canonical URL list
+├── _headers                # Cloudflare cache-control rules for static assets
+├── .assetsignore           # Files excluded from the public deploy
+├── wrangler.toml           # Cloudflare Workers config
+├── Charlton.woff2          # Custom display font (deployed)
+├── Charlton.otf            # Font source (not deployed)
+├── favicon.svg             # Brand mark
+├── barn-logo.webp          # Optimized barn logo (deployed)
+├── BARN transparent.png    # Barn logo source (not deployed)
+├── apple-touch-icon.png    # iOS home-screen icon (also icon-512.png for PWA)
+├── main house.jpg          # Hero photo (optimized)
+├── og-image.jpg            # 1.91:1 social/OG crop of the hero photo
 ├── plan.md                 # Original project plan (historical)
 ├── guidebook.md            # Guidebook content draft
 ├── airbnb-listing-copy.md  # Listing copy
-├── wrangler.toml           # Cloudflare Workers config
-├── Charlton.otf            # Custom display font
-├── favicon.svg / logo.svg  # Brand marks
-├── BARN transparent.png    # Barn logo image
-├── main house.jpg          # Hero / OG image
 └── CLAUDE.md               # This development guide
 ```
 

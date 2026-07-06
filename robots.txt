@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /google-banner.html
+
+Sitemap: https://79westmain.com/sitemap.xml

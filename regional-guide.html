@@ -7,20 +7,25 @@
     <meta name="description" content="Discover the best of the Finger Lakes region. Wine trails, waterfalls, restaurants, and local attractions near 79th on Main luxury barn retreat.">
     <meta property="og:title" content="79 West Main - Finger Lakes Regional Guide">
     <meta property="og:description" content="Your guide to the Finger Lakes. Wineries, waterfalls, dining, and activities near 79th on Main.">
-    <meta property="og:image" content="https://79westmain.com/main%20house.jpg">
+    <meta property="og:image" content="https://79westmain.com/og-image.jpg">
     <meta property="og:url" content="https://79westmain.com/regional-guide">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://79westmain.com/regional-guide">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#9BAE9B">
+    <link rel="preload" href="Charlton.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Charlton';
-            src: url('Charlton.otf') format('opentype');
+            src: url('Charlton.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         * {
@@ -36,8 +41,12 @@
         body {
             font-family: 'Raleway', sans-serif;
             background: #9BAE9B;
-            color: #7C766C;
+            color: #666055;
             min-height: 100vh;
+        }
+
+        section[id] {
+            scroll-margin-top: 100px;
         }
 
         .header {
@@ -45,9 +54,6 @@
             padding: 2rem 1rem;
             text-align: center;
             border-bottom: 4px solid #9BAE9B;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         .header h1 {
@@ -101,8 +107,8 @@
             background: rgba(230, 220, 200, 0.95);
             padding: 1rem;
             position: sticky;
-            top: 120px;
-            z-index: 99;
+            top: 0;
+            z-index: 100;
             border-bottom: 1px solid rgba(155, 174, 155, 0.3);
         }
 
@@ -116,7 +122,7 @@
         }
 
         .nav-links a {
-            color: #7C766C;
+            color: #666055;
             text-decoration: none;
             font-weight: 400;
             letter-spacing: 1px;
@@ -130,6 +136,11 @@
         .nav-links a:hover {
             color: #8E4B35;
             background: rgba(142, 75, 53, 0.08);
+        }
+
+        .nav-links a.active {
+            color: #8E4B35;
+            background: rgba(142, 75, 53, 0.12);
         }
 
         .container {
@@ -166,7 +177,7 @@
 
         .hero-section p {
             line-height: 1.8;
-            color: #7C766C;
+            color: #666055;
             font-size: 1.05rem;
             max-width: 700px;
             margin: 0 auto;
@@ -228,7 +239,7 @@
         }
 
         .quick-hit-card p {
-            color: #7C766C;
+            color: #666055;
             line-height: 1.6;
             font-size: 0.95rem;
         }
@@ -266,20 +277,34 @@
         }
 
         .place-item a:hover {
-            color: #9BAE9B;
+            color: #526452;
             text-decoration: underline;
         }
 
         .place-item em {
-            color: #9BAE9B;
+            color: #526452;
             font-style: normal;
             font-weight: 400;
             font-size: 0.9rem;
         }
 
+        .map-link {
+            display: block;
+            margin-top: 0.5rem;
+            color: #526452;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .map-link:hover {
+            color: #8E4B35;
+            text-decoration: underline;
+        }
+
         .distance-badge {
             display: inline-block;
-            background: #9BAE9B;
+            background: #526452;
             color: #E6DCC8;
             padding: 0.2rem 0.6rem;
             font-size: 0.85rem;
@@ -320,7 +345,7 @@
         .itinerary-card li {
             padding: 0.8rem 0;
             border-bottom: 1px solid rgba(155, 174, 155, 0.15);
-            color: #7C766C;
+            color: #666055;
             line-height: 1.6;
         }
 
@@ -355,7 +380,7 @@
 
         .tips-box li {
             padding: 0.5rem 0;
-            color: #7C766C;
+            color: #666055;
             line-height: 1.6;
             position: relative;
             padding-left: 1.5rem;
@@ -363,7 +388,7 @@
 
         .tips-box li:before {
             content: "•";
-            color: #9BAE9B;
+            color: #526452;
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -380,9 +405,9 @@
         .nav-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: transparent;
+            background: #E6DCC8;
             border: 2px solid #E6DCC8;
-            color: #E6DCC8;
+            color: #526452;
             text-decoration: none;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -392,21 +417,47 @@
         }
 
         .nav-button:hover {
-            background: #E6DCC8;
-            color: #9BAE9B;
+            background: #FFFFFF;
+            border-color: #FFFFFF;
+            color: #526452;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(230, 220, 200, 0.3);
         }
 
+        .back-to-top {
+            position: fixed;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: #E6DCC8;
+            color: #526452;
+            font-size: 1.4rem;
+            line-height: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 90;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         @media (max-width: 768px) {
+            section[id] {
+                scroll-margin-top: 150px;
+            }
+
             .header h1 {
                 font-size: 2rem;
                 flex-direction: column;
                 gap: 0.1rem;
-            }
-
-            .nav-bar {
-                top: 160px;
             }
 
             .nav-links {
@@ -438,7 +489,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="title-link">
+        <a href="/" class="title-link">
             <h1>
                 <span class="number">79TH</span>
                 <span class="on">ON</span>
@@ -493,35 +544,35 @@
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Taughannock Falls State Park</strong> — Easy gorge trail to a 215-ft waterfall (one of the tallest east of the Rockies) or quick drive to the overlook. Beach and picnic areas on Cayuga Lake.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 1740 Taughannock Blvd, Trumansburg, NY 14886</span>
+                    <a class="map-link" href="https://maps.google.com/?q=1740+Taughannock+Blvd%2C+Trumansburg%2C+NY+14886" target="_blank" rel="noopener">📍 1740 Taughannock Blvd, Trumansburg, NY 14886</a>
                 </div>
                 <div class="place-item">
                     <strong>Black Diamond Trail</strong> — Gentle 8.4-mile rail trail linking Taughannock to Ithaca's Cass Park.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 Trail access at Taughannock Falls State Park or Cass Park, Ithaca</span>
+                    <a class="map-link" href="https://maps.google.com/?q=Black+Diamond+Trail%2C+Ithaca%2C+NY" target="_blank" rel="noopener">📍 Trail access at Taughannock Falls State Park or Cass Park, Ithaca</a>
                 </div>
                 <div class="place-item">
                     <strong>Cayuga Nature Center</strong> — Woodland trails, a six-story treehouse, animal exhibits, and Black Diamond Trail access.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 1420 Taughannock Blvd, Ithaca, NY 14850</span>
+                    <a class="map-link" href="https://maps.google.com/?q=1420+Taughannock+Blvd%2C+Ithaca%2C+NY+14850" target="_blank" rel="noopener">📍 1420 Taughannock Blvd, Ithaca, NY 14850</a>
                 </div>
                 <div class="place-item">
                     <strong>Buttermilk Falls State Park</strong> — Gorge and rim hikes with cascades; seasonal swimming area.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 106 E Buttermilk Falls Rd, Ithaca, NY 14850</span>
+                    <a class="map-link" href="https://maps.google.com/?q=106+E+Buttermilk+Falls+Rd%2C+Ithaca%2C+NY+14850" target="_blank" rel="noopener">📍 106 E Buttermilk Falls Rd, Ithaca, NY 14850</a>
                 </div>
                 <div class="place-item">
                     <strong>Robert H. Treman State Park</strong> — Enfield Glen gorge, Lucifer Falls, and a photogenic stone staircase.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 105 Enfield Falls Rd, Ithaca, NY 14850</span>
+                    <a class="map-link" href="https://maps.google.com/?q=105+Enfield+Falls+Rd%2C+Ithaca%2C+NY+14850" target="_blank" rel="noopener">📍 105 Enfield Falls Rd, Ithaca, NY 14850</a>
                 </div>
                 <div class="place-item">
                     <strong>Allan H. Treman State Marine Park</strong> — Boat launch, marina, and birding at the south end of Cayuga Lake.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 805 Taughannock Blvd, Ithaca, NY 14850</span>
+                    <a class="map-link" href="https://maps.google.com/?q=805+Taughannock+Blvd%2C+Ithaca%2C+NY+14850" target="_blank" rel="noopener">📍 805 Taughannock Blvd, Ithaca, NY 14850</a>
                 </div>
                 <div class="place-item">
                     <strong>Puddledockers</strong> — Kayak and paddleboard rentals on Cayuga Lake and the inlet.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 321 Taughannock Blvd, Ithaca, NY 14850</span>
+                    <a class="map-link" href="https://maps.google.com/?q=321+Taughannock+Blvd%2C+Ithaca%2C+NY+14850" target="_blank" rel="noopener">📍 321 Taughannock Blvd, Ithaca, NY 14850</a>
                 </div>
                 <div class="place-item">
                     <strong>Watkins Glen State Park</strong> — 19 waterfalls in a 2-mile gorge with stone bridges, tunnels, and 200-ft cliffs. The famous Gorge Trail winds past cascades including Rainbow Falls.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 1009 N Franklin St, Watkins Glen, NY 14891 • 25 min drive</span>
+                    <a class="map-link" href="https://maps.google.com/?q=1009+N+Franklin+St%2C+Watkins+Glen%2C+NY+14891" target="_blank" rel="noopener">📍 1009 N Franklin St, Watkins Glen, NY 14891 • 25 min drive</a>
                 </div>
             </div>
         </section>
@@ -530,10 +581,10 @@
             <h2>Seneca Lake Wine Trail Adventure</h2>
             <span class="distance-badge">Full Day Experience</span>
             
-            <p style="margin-bottom: 2rem; color: #7C766C; font-style: italic;">A carefully curated wine trail route from Burdett to Geneva, with options to return via Cayuga Lake. Plan 6-8 hours for the full experience.</p>
+            <p style="margin-bottom: 2rem; color: #666055; font-style: italic;">A carefully curated wine trail route from Burdett to Geneva, with options to return via Cayuga Lake. Plan 6-8 hours for the full experience.</p>
 
             <div style="background: rgba(155, 174, 155, 0.1); padding: 1.2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
-                <p style="margin: 0; color: #7C766C; font-size: 0.95rem;"><strong>Navigation Tip:</strong> Use your favorite maps app (Google Maps, Apple Maps, Waze) to navigate between stops using the addresses provided below.</p>
+                <p style="margin: 0; color: #666055; font-size: 0.95rem;"><strong>Navigation Tip:</strong> Use your favorite maps app (Google Maps, Apple Maps, Waze) to navigate between stops using the addresses provided below.</p>
             </div>
 
             <div class="highlight-box" style="background: rgba(155, 174, 155, 0.12); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #9BAE9B;">
@@ -542,54 +593,54 @@
             </div>
 
             <h3>Starting Point: Burdett Wineries</h3>
-            <p style="color: #7C766C; margin-bottom: 1.5rem;"><strong>Drive Time from Trumansburg:</strong> 25 minutes via NY-96 South</p>
+            <p style="color: #666055; margin-bottom: 1.5rem;"><strong>Drive Time from Trumansburg:</strong> 25 minutes via NY-96 South</p>
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Osmote Wine Cellars</strong> — Small-batch, handcrafted wines in intimate tasting room. Known for unique varietals and personalized service.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 5210 County Road 132, Burdett</span>
+                    <a class="map-link" href="https://maps.google.com/?q=5210+County+Road+132%2C+Burdett%2C+NY" target="_blank" rel="noopener">📍 5210 County Road 132, Burdett</a>
                 </div>
                 <div class="place-item">
                     <strong>Hillick & Hobbs Estate</strong> — European-style winery with stunning architecture and sophisticated wines. Beautiful grounds perfect for photos.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 5537 NY-414, Burdett • 5 min drive north</span>
+                    <a class="map-link" href="https://maps.google.com/?q=5537+NY-414%2C+Burdett" target="_blank" rel="noopener">📍 5537 NY-414, Burdett • 5 min drive north</a>
                 </div>
             </div>
 
             <h3>Lunch Break: Lakeside Dining</h3>
-            <p style="color: #7C766C; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 15-20 minutes north on NY-414</p>
+            <p style="color: #666055; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 15-20 minutes north on NY-414</p>
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Stonecat Cafe</strong> — Farm-to-table cuisine with panoramic Seneca Lake views. Outdoor seating available seasonally.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 5315 NY-414, Hector</span>
+                    <a class="map-link" href="https://maps.google.com/?q=5315+NY-414%2C+Hector" target="_blank" rel="noopener">📍 5315 NY-414, Hector</a>
                 </div>
                 <div class="place-item">
                     <strong>The Elf in the Oak</strong> — Cozy lakeside spot known for fresh, local ingredients and creative seasonal menu.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 Along NY-414 (check current location)</span>
+                    <a class="map-link" href="https://maps.google.com/?q=The+Elf+in+the+Oak%2C+NY" target="_blank" rel="noopener">📍 Along NY-414 (check current location)</a>
                 </div>
             </div>
 
             <h3>Afternoon Tastings: Mid-Lake Gems</h3>
-            <p style="color: #7C766C; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 5-10 minutes between stops</p>
+            <p style="color: #666055; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 5-10 minutes between stops</p>
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Standing Stone Vineyards</strong> — Award-winning Rieslings and reds with sweeping lake views. Dog-friendly outdoor seating.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 9934 NY-414, Hector</span>
+                    <a class="map-link" href="https://maps.google.com/?q=9934+NY-414%2C+Hector" target="_blank" rel="noopener">📍 9934 NY-414, Hector</a>
                 </div>
                 <div class="place-item">
                     <strong>Lamoreaux Landing Wine Cellars</strong> — Iconic Greek Revival building with exceptional wines and educational tours. Don't miss their Riesling.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 9224 NY-414, Lodi • 10 min north</span>
+                    <a class="map-link" href="https://maps.google.com/?q=9224+NY-414%2C+Lodi" target="_blank" rel="noopener">📍 9224 NY-414, Lodi • 10 min north</a>
                 </div>
                 <div class="place-item">
                     <strong>Boundary Breaks Vineyard</strong> — Stunning sunset views, acclaimed Rieslings, and dog-friendly lawns. Perfect for relaxing with a glass outdoors.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 1569 Porter Hokanson Rd, Lodi • 8 min east</span>
+                    <a class="map-link" href="https://maps.google.com/?q=1569+Porter+Hokanson+Rd%2C+Lodi%2C+NY" target="_blank" rel="noopener">📍 1569 Porter Hokanson Rd, Lodi • 8 min east</a>
                 </div>
             </div>
 
             <h3>Northern Route Option: Extend to Geneva</h3>
-            <p style="color: #7C766C; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 20 minutes north to Geneva</p>
+            <p style="color: #666055; margin-bottom: 1.5rem;"><strong>Drive Time:</strong> 20 minutes north to Geneva</p>
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Three Brothers Wineries & Estates</strong> — Family operation with three distinct labels, distillery, and brewery on-site. Great for groups with varied tastes.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 623 Lerch Rd, Geneva</span>
+                    <a class="map-link" href="https://maps.google.com/?q=623+Lerch+Rd%2C+Geneva%2C+NY" target="_blank" rel="noopener">📍 623 Lerch Rd, Geneva</a>
                 </div>
             </div>
 
@@ -598,22 +649,22 @@
                     <strong>Dinner in Geneva</strong>
                     <p><strong>The Rusty Pig</strong> — Upscale gastropub with craft cocktails and locally-sourced menu.</p>
                     <p><strong>Alternative Options:</strong> Ports Cafe (waterfront), Beef & Brew (steakhouse), or Abigail's Restaurant (fine dining).</p>
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 Various locations in downtown Geneva • 45 min drive back to Trumansburg</span>
+                    <a class="map-link" href="https://maps.google.com/?q=Downtown+Geneva%2C+NY" target="_blank" rel="noopener">📍 Various locations in downtown Geneva • 45 min drive back to Trumansburg</a>
                 </div>
             </div>
 
             <h3>Alternative Return: Cayuga Lake Loop</h3>
-            <p style="color: #7C766C; margin-bottom: 1.5rem;"><strong>Instead of Geneva:</strong> Head west to Cayuga Lake for a shorter drive home</p>
+            <p style="color: #666055; margin-bottom: 1.5rem;"><strong>Instead of Geneva:</strong> Head west to Cayuga Lake for a shorter drive home</p>
             <div class="place-grid">
                 <div class="place-item">
                     <strong>Bet the Farm Winery</strong> — Your final stop! Right in Trumansburg, perfect for ending the day close to home with local wines and a relaxed atmosphere.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 5055 NY-96, Trumansburg • 5 min from downtown</span>
+                    <a class="map-link" href="https://maps.google.com/?q=5055+NY-96%2C+Trumansburg" target="_blank" rel="noopener">📍 5055 NY-96, Trumansburg • 5 min from downtown</a>
                 </div>
             </div>
 
             <div class="highlight-box" style="background: rgba(142, 75, 53, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8E4B35;">
                 <h4 style="color: #8E4B35; margin-bottom: 1rem;">🚗 Planning Your Route</h4>
-                <ul style="color: #7C766C; line-height: 1.7;">
+                <ul style="color: #666055; line-height: 1.7;">
                     <li><strong>Total Distance (Geneva route):</strong> ~90 miles, 6-8 hours including tastings</li>
                     <li><strong>Total Distance (Cayuga loop):</strong> ~60 miles, 4-6 hours including tastings</li>
                     <li><strong>Best Days:</strong> Friday-Sunday for full winery hours and food service</li>
@@ -781,7 +832,7 @@
             <div class="place-grid">
                 <div class="place-item">
                     <strong><a href="https://www.theglen.com/">Watkins Glen International</a></strong> — Premier NASCAR road course hosting racing events including the Go Bowling at The Glen. Drive the track yourself on non-race days.
-                    <span style="display: block; margin-top: 0.5rem; color: #9BAE9B; font-size: 0.9rem;">📍 2790 County Route 16, Watkins Glen, NY 14891 • 25 min drive</span>
+                    <a class="map-link" href="https://maps.google.com/?q=2790+County+Route+16%2C+Watkins+Glen%2C+NY+14891" target="_blank" rel="noopener">📍 2790 County Route 16, Watkins Glen, NY 14891 • 25 min drive</a>
                 </div>
                 <div class="place-item">
                     <strong><a href="https://home.cmog.org/">Corning Museum of Glass</a></strong> — Live glassblowing, galleries, and hands-on experiences.
@@ -805,9 +856,37 @@
         </section>
 
         <div class="navigation-buttons">
-            <a href="index.html" class="nav-button">Back to Homepage</a>
-            <a href="house-guide.html" class="nav-button">House Guide</a>
+            <a href="/" class="nav-button">Back to Homepage</a>
+            <a href="/house-guide" class="nav-button">House Guide</a>
         </div>
     </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">&#8593;</button>
+
+    <script>
+        // Highlight the section currently in view in the sticky nav
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const linkFor = {};
+        navLinks.forEach(a => { linkFor[a.getAttribute('href').slice(1)] = a; });
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && linkFor[entry.target.id]) {
+                    navLinks.forEach(a => a.classList.remove('active'));
+                    linkFor[entry.target.id].classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+        // Back-to-top
+        const topBtn = document.getElementById('backToTop');
+        addEventListener('scroll', () => {
+            topBtn.classList.toggle('visible', scrollY > 600);
+        }, { passive: true });
+        topBtn.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Offline support: cache the guides for spotty rural coverage
+        if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+    </script>
 </body>
 </html>

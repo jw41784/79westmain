@@ -1,0 +1,14 @@
+{
+  "name": "79th on Main Guest Guide",
+  "short_name": "79th on Main",
+  "description": "Guest guidebook for the 79th on Main barn retreat in Trumansburg, NY",
+  "start_url": "/house-guide",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#E6DCC8",
+  "theme_color": "#9BAE9B",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

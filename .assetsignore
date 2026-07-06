@@ -1,0 +1,7 @@
+*.md
+*.toml
+.gitignore
+.assetsignore
+.claude/
+Charlton.otf
+BARN transparent.png
